@@ -1,0 +1,74 @@
+﻿
+
+<span class="title">Report</span>
+<span class="shortcut">
+    <div class="navicon">
+        <TelerikMenu Data="@MenuItems" OnClick="@((MenuItem item) => OnClickHandler(item))" />
+    </div>
+    <div class="userinfo">
+        <TelerikMenu Data="@userinfo" OnClick="@((MenuItem item) => OnClickHandler(item))" />
+    </div>
+</span>
+
+@code {
+    private List<MenuItem> userinfo { get; set; }
+    private List<MenuItem> MenuItems { get; set; }
+    private string user = "사용자";
+
+    protected override void OnInitialized()
+    {
+        MenuItems = new List<MenuItem>()
+        {
+            new MenuItem()
+            {
+                Icon = "home",
+                subt = "home"
+            }, 
+            //new MenuItem()
+            //{
+            //    Icon = "star"
+            //},
+            // new MenuItem()
+            //{
+            //    Icon = "star"
+            //}
+        };
+
+        userinfo = new List<MenuItem>()
+        {
+            new MenuItem()
+            {
+                Text = user,
+                Icon = "user",
+                Items = new List<MenuItem>()
+                {
+                    new MenuItem()
+                    {
+                        Text = "내 정보 보기",
+                        Icon = "info"
+                    },
+                    new MenuItem()
+                    {
+                        Text = "정보 수정",
+                        Icon = "update"
+                    },
+                    new MenuItem()
+                    {
+                        Text = "로그 아웃",
+                        Icon = "logout"
+                    },
+                }
+            },
+        };
+
+        base.OnInitialized();
+    }
+    protected void OnClickHandler(MenuItem item)
+    {
+        //클릭한 아이템 if 처리하여 navigation 코딩
+        if (item.subt.Equals("home"))
+        {
+            navigationManager.NavigateTo("/");
+        }
+    }
+}

@@ -1,0 +1,36 @@
+.title[b-oyocz6ny4v] {
+    font: 35px bolder;
+    color: white;
+    display: flex;
+    justify-content: flex-start;
+    float: left;
+}
+
+@media (max-width: 640.98px) {
+    .title:not(.auth)[b-oyocz6ny4v] {
+        display: none;
+    }
+}
+
+.shortcut[b-oyocz6ny4v] {
+    color: white;
+    float: right;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1%;
+}
+
+.navicon[b-oyocz6ny4v] {
+
+}
+
+.userinfo[b-oyocz6ny4v] {
+    color: white;
+}
+
+@media (max-width: 640.98px) {
+    .shortcut[b-oyocz6ny4v] {
+        margin-top:5%;
+    }
+    
+}

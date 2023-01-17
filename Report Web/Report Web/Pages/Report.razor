@@ -1,0 +1,181 @@
+﻿@page "/report/{category}"
+
+
+@if (Loaded)
+{
+    <div class="container">
+        <div class="header">
+            <span class="title">
+                @category
+            </span>
+            <span class="formbtn">
+                <TelerikButton Class="telerincbtn" ThemeColor="@ThemeConstants.Button.ThemeColor.Primary" OnClick="@(() => WindowVisible = true)"><p class="btntext">생성</p></TelerikButton>
+            </span>
+        </div>
+
+        <div class="reportform">
+            <TelerikGrid Data="@Dailys" Pageable="true" Sortable="true">
+            
+                <GridToolBar>
+                    <GridCommandButton Command="ExcelExport" Icon="file-excel">Export to Excel</GridCommandButton>
+                    @*<label class="k-checkbox-label"><TelerikCheckBox @bind-Value="@ExportAllPages" />Export All Pages</label>*@
+                </GridToolBar>
+
+                <DetailTemplate Context="detailContext">
+                    @{
+                        int currentId = detailContext.no;
+
+                        var data = Dailys.Where(x => x.no == currentId);
+
+                        <TelerikListView Data="@data">
+                            <Template Context="Load">
+                                <div class="crudbtn">
+                                    <span class="upbtn"><TelerikButton Class="crudbtn" ThemeColor="@ThemeConstants.Button.ThemeColor.Primary" @onclick="UpdateData">+</TelerikButton></span>
+                                    <span class="delbtn"><TelerikButton Class="crudbtn" ThemeColor="@ThemeConstants.Button.ThemeColor.Primary">x</TelerikButton></span>
+                                </div>
+                                <div class="row data">
+                                    <div class="data-progress">
+                                        <div class="data-header">
+                                            @menus[0]
+                                        </div>
+                                        <div class="data-content">
+                                            <p class="cont-text">@Load.progress</p>
+                                        </div>
+                                    </div>
+                                    <div class="data-operation">
+                                        <div class="data-header">
+                                            @menus[1]
+                                        </div>
+                                        <div class="data-content">
+                                            <p class="cont-text">@Load.operation</p>
+                                        </div>
+                                    </div>
+                                    <div class="data-issues">
+                                        <div class="data-header">
+                                            @menus[2]
+                                        </div>
+                                        <div class="data-content">
+                                            <p class="cont-text">@Load.issue</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </Template>
+                        </TelerikListView>
+                    }
+                </DetailTemplate>
+
+                <GridColumns>
+                    <GridColumn Field="title" Title="제목" Width="54%" />
+                    <GridColumn Field="writer" Title="작성자" Width="25%"/>
+                    <GridColumn Field="important" Title="중요도" Width="22%" />
+                </GridColumns>
+            </TelerikGrid>
+        </div>
+    </div>   
+
+    <TelerikWindow Class="demo-window" Width="80%" Height="70%" Centered="true" @bind-Visible=@WindowVisible Modal="true">
+        <WindowTitle>
+            <strong>Create Project</strong>
+        </WindowTitle>
+        <WindowActions>
+            <WindowAction Name="Close" />
+        </WindowActions>
+        <WindowContent>
+            <TelerikForm Model="@Daily" OnValidSubmit="HandleValidSubmit">
+                <FormValidation>
+                    <DataAnnotationsValidator />
+                </FormValidation>
+                <FormItems>
+                    <FormItem Field="@nameof(Daily.category)" EditorType="@FormEditorType.TextArea"></FormItem>
+                    <FormItem Field="@nameof(Daily.title)" EditorType="@FormEditorType.TextArea"></FormItem>
+                    <FormItem Field="@nameof(Daily.writer)" EditorType="@FormEditorType.TextArea"></FormItem>
+                    <FormItem Field="@nameof(Daily.managers)" EditorType="@FormEditorType.TextArea"></FormItem>
+                    <FormItem Field="@nameof(Daily.important)" EditorType="@FormEditorType.TextArea"></FormItem>
+                    <FormItem Field="@nameof(Daily.progress)" EditorType="@FormEditorType.TextArea"></FormItem>
+                    <FormItem Field="@nameof(Daily.operation)" EditorType="@FormEditorType.TextArea"></FormItem>
+                    <FormItem Field="@nameof(Daily.issue)" EditorType="@FormEditorType.TextArea"></FormItem>
+                </FormItems>
+            </TelerikForm>
+        </WindowContent>
+    </TelerikWindow>
+}
+
+@code {
+    [Parameter]
+    public string category { get; set; }
+
+    public bool WindowVisible { get; set; }
+
+    private bool Loaded = false;
+    private string[] menus = { "진행", "운영", "이슈" };
+    private List<Daily> Dailys { get; set; }
+    private Daily Daily = new Daily();
+
+    protected override void OnInitialized()
+    {
+        Dailys = new List<Daily>();
+
+        if (category.Equals("국방부"))
+        {
+            Dailys.Add(new Daily { no = 0, category = "국방부", title = "20230101", writer = "나태훈", managers = "이창노, 심상민, 이성훈", important = "3", operation="운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다. 운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다."});
+            Dailys.Add(new Daily { no = 1, category = "국방부", title = "20230102", writer = "나태훈", managers = "이창노, 심상민, 이성훈", important = "1"});
+            Dailys.Add(new Daily { no = 2, category = "국방부", title = "20230103", writer = "나태훈", managers = "이창노, 심상민, 이성훈", important = "6"});
+            Dailys.Add(new Daily { no = 3, category = "국방부", title = "20230104", writer = "나태훈", managers = "이창노, 심상민, 이성훈", important = "7"});
+            Dailys.Add(new Daily { no = 4, category = "국방부", title = "20230105", writer = "나태훈", managers = "이창노, 심상민, 이성훈", important = "2"});
+            Dailys.Add(new Daily { no = 5, category = "국방부", title = "20230106", writer = "나태훈", managers = "이창노, 심상민, 이성훈", important = "3"});
+            Dailys.Add(new Daily { no = 6, category = "국방부", title = "20230107", writer = "나태훈", managers = "이창노, 심상민, 이성훈", important = "1"});
+            Dailys.Add(new Daily { no = 7, category = "국방부", title = "20230108", writer = "나태훈", managers = "이창노, 심상민, 이성훈", important = "6"});
+            Dailys.Add(new Daily { no = 8, category = "국방부", title = "20230109", writer = "나태훈", managers = "이창노, 심상민, 이성훈", important = "7"});
+            Dailys.Add(new Daily { no = 9, category = "국방부", title = "20230110", writer = "나태훈", managers = "이창노, 심상민, 이성훈", important = "2"});
+        }
+
+        if (category.Equals("FIS"))
+        {
+            Dailys.Add(new Daily { no = 0, category = "FIS", title = "20230101", writer = "나태훈", managers = "김강한, 정민정", important = "3"});
+            Dailys.Add(new Daily { no = 1, category = "FIS", title = "20230102", writer = "나태훈", managers = "김강한, 정민정", important = "1"});
+            Dailys.Add(new Daily { no = 2, category = "FIS", title = "20230103", writer = "나태훈", managers = "김강한, 정민정", important = "6"});
+            Dailys.Add(new Daily { no = 3, category = "FIS", title = "20230104", writer = "나태훈", managers = "김강한, 정민정", important = "7"});
+            Dailys.Add(new Daily { no = 4, category = "FIS", title = "20230105", writer = "나태훈", managers = "김강한, 정민정", important = "2"});
+        }
+
+        if (category.Equals("방송통신대학교"))
+        {
+            Dailys.Add(new Daily { no = 0, category = "방송통신대학교", title = "20230101", writer = "나태훈", managers = "이창노, 김강한, 이희범", important = "3" });
+            Dailys.Add(new Daily { no = 1, category = "방송통신대학교", title = "20230102", writer = "나태훈", managers = "이창노, 김강한, 이희범", important = "1" });
+            Dailys.Add(new Daily { no = 2, category = "방송통신대학교", title = "20230103", writer = "나태훈", managers = "이창노, 김강한, 이희범", important = "6" });
+            Dailys.Add(new Daily { no = 3, category = "방송통신대학교", title = "20230104", writer = "나태훈", managers = "이창노, 김강한, 이희범", important = "7" });
+            Dailys.Add(new Daily { no = 4, category = "방송통신대학교", title = "20230105", writer = "나태훈", managers = "이창노, 김강한, 이희범", important = "2" });
+        }
+
+        if (category.Equals("제주은행"))
+        {
+            Dailys.Add(new Daily { no = 0, category = "제주은행", title = "20230101", writer = "나태훈", managers = "이창노, 김강한, 나태훈", important = "3" });
+            Dailys.Add(new Daily { no = 1, category = "제주은행", title = "20230102", writer = "나태훈", managers = "이창노, 김강한, 나태훈", important = "1" });
+            Dailys.Add(new Daily { no = 2, category = "제주은행", title = "20230103", writer = "나태훈", managers = "이창노, 김강한, 나태훈", important = "6" });
+            Dailys.Add(new Daily { no = 3, category = "제주은행", title = "20230104", writer = "나태훈", managers = "이창노, 김강한, 나태훈", important = "7" });
+            Dailys.Add(new Daily { no = 4, category = "제주은행", title = "20230105", writer = "나태훈", managers = "이창노, 김강한, 나태훈", important = "2" });
+        }
+
+        Loaded = true;
+
+        base.OnInitialized();
+    }
+
+    async void HandleValidSubmit()
+    {
+        await Task.Delay(1000);
+    }
+
+    async void UpdateData()
+    {
+        await Task.Delay(1000);
+        Daily = 
+    }
+
+}
+
+<style>
+    .telerincbtn{
+        height:35px;
+    }
+</style>

@@ -1,0 +1,60 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = Report_Web
+build_property.RootNamespace = Report_Web
+build_property.ProjectDir = C:\Users\EBSoft\Desktop\workspace\Cs\Report Web\Report Web\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\EBSoft\Desktop\workspace\Cs\Report Web\Report Web
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/EBSoft/Desktop/workspace/Cs/Report Web/Report Web/App.razor]
+build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/EBSoft/Desktop/workspace/Cs/Report Web/Report Web/Pages/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/EBSoft/Desktop/workspace/Cs/Report Web/Report Web/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/EBSoft/Desktop/workspace/Cs/Report Web/Report Web/Pages/Main.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWFpbi5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-wb71bmtvof
+
+[C:/Users/EBSoft/Desktop/workspace/Cs/Report Web/Report Web/Pages/Modal.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTW9kYWwucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-to3e6a687c
+
+[C:/Users/EBSoft/Desktop/workspace/Cs/Report Web/Report Web/Pages/Report.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVwb3J0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-oavzrfse27
+
+[C:/Users/EBSoft/Desktop/workspace/Cs/Report Web/Report Web/Pages/TopBar.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVG9wQmFyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-oyocz6ny4v
+
+[C:/Users/EBSoft/Desktop/workspace/Cs/Report Web/Report Web/Shared/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-d9rhw13c0i
+
+[C:/Users/EBSoft/Desktop/workspace/Cs/Report Web/Report Web/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/EBSoft/Desktop/workspace/Cs/Report Web/Report Web/Pages/_Host.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0hvc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/EBSoft/Desktop/workspace/Cs/Report Web/Report Web/Pages/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0xheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 

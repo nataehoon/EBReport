@@ -1,0 +1,179 @@
+﻿@page "/main"
+
+@if (Loaded)
+{
+    <div class="container">
+        <div class="header">
+            <span class="title">Project</span>
+            <span class="formbtn">
+                <TelerikButton Class="telerincbtn" ThemeColor="@ThemeConstants.Button.ThemeColor.Primary" OnClick="@(() => WindowVisible = true)"><p class="btntext">생성</p></TelerikButton>
+            </span>
+        </div>
+        <div class="row">
+            @foreach(var ProjectInfo in ProjectManages){
+                <div class="box">
+                    <TelerikGridLayout>
+                        <GridLayoutColumns>
+                            <GridLayoutColumn Width="100%"></GridLayoutColumn>
+                        </GridLayoutColumns>
+                        <GridLayoutRows>
+                            <GridLayoutRow Height="200px"></GridLayoutRow>
+                        </GridLayoutRows>
+                        <GridLayoutItems>
+                            <GridLayoutItem>
+                                <div class="box-header" @onclick=@(() => navigationManager.NavigateTo("/report/" + ProjectInfo.title))>
+                                    <span class="header-title" >@ProjectInfo.title</span>
+                                    <span class="header-state" >
+                                        @*진행 상태에 따른 버튼 색/텍스트 삽입*@
+                                        @if (ProjectInfo.progress >= 100)
+                                        {
+                                            <TelerikButton Class="statebtn end"><p class="btntext">종료</p></TelerikButton>
+                                        }else if(ProjectInfo.progress <= 0)
+                                        {
+                                            <TelerikButton Class="statebtn pre"><p class="btntext">준비</p></TelerikButton>
+                                        }else
+                                        {
+                                            <TelerikButton Class="statebtn pro"><p class="btntext">진행</p></TelerikButton>
+                                        }
+                                    </span>
+                                </div>
+                                <div class="box-content1" @onclick=@(() => navigationManager.NavigateTo("/report/" + ProjectInfo.title))>
+                                    <div class="cont-title">@ProjectInfo.title 프로젝트</div>
+                                </div>
+                                <div class="box-content2">
+                                    <span class="cont-period">@ProjectInfo.startperiod.ToShortDateString() ~ @ProjectInfo.endperiod.ToShortDateString()</span>
+                                    <span class="cont-btn">
+                                        <TelerikButton Class="crudbtn" ThemeColor="@ThemeConstants.Button.ThemeColor.Primary">+</TelerikButton>
+                                        <TelerikButton Class="crudbtn" ThemeColor="@ThemeConstants.Button.ThemeColor.Primary">x</TelerikButton>
+                                        @*<button type="button" class="probtnup">+</button>
+                                        <button type="button" class="probtndel">x</button>*@
+                                    </span>
+                                </div>
+                                <div class="progress">
+                                    <TelerikProgressBar  Class="progressbar" Max="100" Value="@ProjectInfo.progress"/>
+                                </div>
+                                <div class="box-foot">
+                                    <div class="foot-content">
+                                        <span style="float:left">담당자</span>
+                                        <span style="float:right">@ProjectInfo.member</span>
+                                    </div>
+                                </div>
+                            </GridLayoutItem>
+                        </GridLayoutItems>
+                    </TelerikGridLayout>
+                </div>
+            }
+        </div>
+    </div>    
+
+    <TelerikWindow Class="demo-window" Width="80%" Height="70%" Centered="true" @bind-Visible=@WindowVisible Modal="true">
+        <WindowTitle>
+            <strong>Create Project</strong>
+        </WindowTitle>
+        <WindowActions>
+            <WindowAction Name="Close" />
+        </WindowActions>
+        <WindowContent>
+            <TelerikForm Model="@projectManage" OnValidSubmit="HandleValidSubmit">
+                <FormValidation>
+                    <DataAnnotationsValidator />
+                </FormValidation>
+                <FormItems>
+                    @*<FormItem Field="@nameof(projectManage.no)" LabelText="no"></FormItem>*@
+                    <FormItem Field="@nameof(projectManage.title)" EditorType="@FormEditorType.TextArea"></FormItem>
+                    <FormItem Field="@nameof(projectManage.member)" EditorType="@FormEditorType.TextArea"></FormItem>
+                    <FormItem Field="@nameof(projectManage.startperiod)" EditorType="@FormEditorType.DateTimePicker"></FormItem>
+                    <FormItem Field="@nameof(projectManage.endperiod)" EditorType="@FormEditorType.DateTimePicker"></FormItem>
+                    @*<FormItem Field="@nameof(projectManage.progress)" LabelText="progress"></FormItem>
+                    <FormItem Field="@nameof(projectManage.totalperiod)" LabelText="totalperiod"></FormItem>*@
+                </FormItems>
+            </TelerikForm>
+        </WindowContent>
+    </TelerikWindow>
+}
+
+@code {
+    private List<ProjectManage> ProjectManages { get; set; }
+    private ProjectManage projectManage = new ProjectManage();
+
+    private bool Loaded = false;
+    public bool WindowVisible { get; set; }
+
+    protected override void OnInitialized()
+    {
+        ProjectManages = new List<ProjectManage>();
+
+        ProjectManages.Add(new ProjectManage {no = 0, title = "국방부", member = "이창노, 심상민, 이성훈", startperiod = DateTime.Now.AddMonths(-2), endperiod = DateTime.Now.AddMonths(2)});
+        ProjectManages.Add(new ProjectManage { no = 1, title = "FIS", member = "김강한, 정민정",  startperiod = DateTime.Now.AddMonths(1), endperiod = DateTime.Now.AddMonths(3)});
+        ProjectManages.Add(new ProjectManage { no = 2, title = "방송통신대학교", member = "이창노, 김강한, 이희범",  startperiod = DateTime.Now.AddMonths(-1), endperiod = DateTime.Now.AddMonths(0).AddDays(1)});
+        ProjectManages.Add(new ProjectManage { no = 3, title = "제주은행", member = "이창노, 김강한, 나태훈",  startperiod = DateTime.Now.AddMonths(1), endperiod = DateTime.Now.AddMonths(2)});
+        ProjectManages.Add(new ProjectManage { no = 4, title = "kt커머스", member = "김강한, 이희범",  startperiod = DateTime.Now.AddMonths(-3), endperiod = DateTime.Now.AddMonths(-2)});
+
+        DateCalculation();
+
+        Loaded = true;
+
+        base.OnInitialized();
+    }
+
+    private void DateCalculation()
+    {
+        DateTime date = DateTime.Now;
+        foreach(var item in ProjectManages)
+        {
+            TimeSpan duration = item.endperiod - item.startperiod;
+            TimeSpan dday = date - item.startperiod;
+            item.totalperiod = duration.Days;
+            double start = duration.Days;
+            double pro = dday.Days;
+            double result = (100 / start) * pro;
+            if(result <= 100)
+            {
+                item.progress = Convert.ToInt32(result);
+            }
+            else
+            {
+                item.progress = 100;
+            }
+
+
+        }
+    }
+
+    async void HandleValidSubmit()
+    {
+        await Task.Delay(1000);
+    }
+}
+
+
+
+
+<style type="text/css">
+    .statebtn {
+        width: 50px;
+        height: 25px;
+    }
+
+    .end {
+        background-color: lightgrey;
+    }
+
+    .pre {
+        background-color: lightgreen;
+    }
+
+    .pro {
+        background-color: red;
+    }
+
+    .telerincbtn{
+        height:35px;
+        
+    }
+
+    .crudbtn{
+        width:12px;
+        height:18px;
+    }
+</style>

@@ -1,0 +1,36 @@
+﻿.title {
+    font: 35px bolder;
+    color: white;
+    display: flex;
+    justify-content: flex-start;
+    float: left;
+}
+
+@media (max-width: 640.98px) {
+    .title:not(.auth) {
+        display: none;
+    }
+}
+
+.shortcut {
+    color: white;
+    float: right;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1%;
+}
+
+.navicon {
+
+}
+
+.userinfo {
+    color: white;
+}
+
+@media (max-width: 640.98px) {
+    .shortcut {
+        margin-top:5%;
+    }
+    
+}

@@ -1,0 +1,12 @@
+﻿.formbtn {
+    display: flex;
+    justify-content: right;
+    margin-top: 2%;
+    margin-right: 2%;
+}
+
+.btntext {
+    margin-top: 17px;
+    color: white;
+    font-size: 15px;
+}

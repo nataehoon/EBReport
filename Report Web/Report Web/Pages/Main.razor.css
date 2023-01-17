@@ -1,0 +1,97 @@
+﻿.header {
+    margin-top: 5%;
+}
+
+.title {
+    font: 40px bolder;
+}
+
+.formbtn {
+    display: flex;
+    justify-content: end;
+    margin-top: 5%;
+    margin-right: 3%;
+}
+
+.btntext {
+    margin-top: 17px;
+    color: white;
+    font-size: 15px;
+}
+
+.box {
+    width: 22%;
+    margin: 2% 2px 2% 2%;
+    border-top: 3px #d5e1df solid;
+    border-left: 3px #d5e1df solid;
+    border-right: 6px #d5e1df inset;
+    border-bottom: 6px #d5e1df inset;
+    border-radius: 8px;
+}
+
+@media only screen and (max-width:800px){
+    .box {
+        width: 95%;
+        margin: 2% 2px 2% 2%;
+    }
+}
+
+.box-header {
+    cursor: pointer;
+    margin-top: 2%;
+    height: 15%;
+    margin-bottom:2%;
+}
+
+.header-title {
+    float:left;
+    font:25px bolder;
+
+}
+
+.header-state {
+    margin-top: 1%;
+    float:right;
+}
+
+.box-content1 {
+    border-top: 1px gray solid;
+    cursor: pointer;
+    margin-top: 2%;
+    height: 35%;
+}
+
+.cont-title {
+    font: 20px bolder;
+}
+
+.box-content2 {
+    height:30px;
+}
+
+.cont-period {
+    float:left;
+}
+
+.cont-btn{
+    float:right;
+}
+
+.progress {
+    height: 11%;
+}
+
+.box-foot {
+    border-top: 1px gray solid;
+    margin-top: 2%;
+}
+
+.foot-content {
+    margin-top: 2%;
+}
+
+.modal{
+    width:50%;
+
+}
+
