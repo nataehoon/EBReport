@@ -1,3 +1,11 @@
+C:\Users\EBSoft\Desktop\workspace\Cs\Report Web\Report Web\obj\Debug\net6.0\Report Web.csproj.AssemblyReference.cache
+C:\Users\EBSoft\Desktop\workspace\Cs\Report Web\Report Web\obj\Debug\net6.0\Report Web.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\EBSoft\Desktop\workspace\Cs\Report Web\Report Web\obj\Debug\net6.0\Report Web.AssemblyInfoInputs.cache
+C:\Users\EBSoft\Desktop\workspace\Cs\Report Web\Report Web\obj\Debug\net6.0\Report Web.AssemblyInfo.cs
+C:\Users\EBSoft\Desktop\workspace\Cs\Report Web\Report Web\obj\Debug\net6.0\Report Web.csproj.CoreCompileInputs.cache
+C:\Users\EBSoft\Desktop\workspace\Cs\Report Web\Report Web\obj\Debug\net6.0\Report Web.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\EBSoft\Desktop\workspace\Cs\Report Web\Report Web\obj\Debug\net6.0\Report Web.RazorAssemblyInfo.cache
+C:\Users\EBSoft\Desktop\workspace\Cs\Report Web\Report Web\obj\Debug\net6.0\Report Web.RazorAssemblyInfo.cs
 C:\Users\EBSoft\Desktop\workspace\Cs\Report Web\Report Web\bin\Debug\net6.0\appsettings.Development.json
 C:\Users\EBSoft\Desktop\workspace\Cs\Report Web\Report Web\bin\Debug\net6.0\appsettings.json
 C:\Users\EBSoft\Desktop\workspace\Cs\Report Web\Report Web\bin\Debug\net6.0\Report Web.staticwebassets.runtime.json
@@ -11,18 +19,12 @@ C:\Users\EBSoft\Desktop\workspace\Cs\Report Web\Report Web\bin\Debug\net6.0\Tele
 C:\Users\EBSoft\Desktop\workspace\Cs\Report Web\Report Web\bin\Debug\net6.0\Telerik.Recurrence.dll
 C:\Users\EBSoft\Desktop\workspace\Cs\Report Web\Report Web\bin\Debug\net6.0\Telerik.Blazor.dll
 C:\Users\EBSoft\Desktop\workspace\Cs\Report Web\Report Web\bin\Debug\net6.0\Telerik.Zip.dll
-C:\Users\EBSoft\Desktop\workspace\Cs\Report Web\Report Web\obj\Debug\net6.0\Report Web.csproj.AssemblyReference.cache
-C:\Users\EBSoft\Desktop\workspace\Cs\Report Web\Report Web\obj\Debug\net6.0\Report Web.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\EBSoft\Desktop\workspace\Cs\Report Web\Report Web\obj\Debug\net6.0\Report Web.AssemblyInfoInputs.cache
-C:\Users\EBSoft\Desktop\workspace\Cs\Report Web\Report Web\obj\Debug\net6.0\Report Web.AssemblyInfo.cs
-C:\Users\EBSoft\Desktop\workspace\Cs\Report Web\Report Web\obj\Debug\net6.0\Report Web.csproj.CoreCompileInputs.cache
-C:\Users\EBSoft\Desktop\workspace\Cs\Report Web\Report Web\obj\Debug\net6.0\Report Web.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\EBSoft\Desktop\workspace\Cs\Report Web\Report Web\obj\Debug\net6.0\Report Web.RazorAssemblyInfo.cache
-C:\Users\EBSoft\Desktop\workspace\Cs\Report Web\Report Web\obj\Debug\net6.0\Report Web.RazorAssemblyInfo.cs
 C:\Users\EBSoft\Desktop\workspace\Cs\Report Web\Report Web\obj\Debug\net6.0\staticwebassets.build.json
 C:\Users\EBSoft\Desktop\workspace\Cs\Report Web\Report Web\obj\Debug\net6.0\staticwebassets.development.json
 C:\Users\EBSoft\Desktop\workspace\Cs\Report Web\Report Web\obj\Debug\net6.0\scopedcss\Pages\Main.razor.rz.scp.css
+C:\Users\EBSoft\Desktop\workspace\Cs\Report Web\Report Web\obj\Debug\net6.0\scopedcss\Pages\Modal.razor.rz.scp.css
 C:\Users\EBSoft\Desktop\workspace\Cs\Report Web\Report Web\obj\Debug\net6.0\scopedcss\Pages\Report.razor.rz.scp.css
+C:\Users\EBSoft\Desktop\workspace\Cs\Report Web\Report Web\obj\Debug\net6.0\scopedcss\Pages\TopBar.razor.rz.scp.css
 C:\Users\EBSoft\Desktop\workspace\Cs\Report Web\Report Web\obj\Debug\net6.0\scopedcss\Shared\MainLayout.razor.rz.scp.css
 C:\Users\EBSoft\Desktop\workspace\Cs\Report Web\Report Web\obj\Debug\net6.0\scopedcss\bundle\Report Web.styles.css
 C:\Users\EBSoft\Desktop\workspace\Cs\Report Web\Report Web\obj\Debug\net6.0\scopedcss\projectbundle\Report Web.bundle.scp.css
@@ -32,5 +34,3 @@ C:\Users\EBSoft\Desktop\workspace\Cs\Report Web\Report Web\obj\Debug\net6.0\refi
 C:\Users\EBSoft\Desktop\workspace\Cs\Report Web\Report Web\obj\Debug\net6.0\Report Web.pdb
 C:\Users\EBSoft\Desktop\workspace\Cs\Report Web\Report Web\obj\Debug\net6.0\Report Web.genruntimeconfig.cache
 C:\Users\EBSoft\Desktop\workspace\Cs\Report Web\Report Web\obj\Debug\net6.0\ref\Report Web.dll
-C:\Users\EBSoft\Desktop\workspace\Cs\Report Web\Report Web\obj\Debug\net6.0\scopedcss\Pages\TopBar.razor.rz.scp.css
-C:\Users\EBSoft\Desktop\workspace\Cs\Report Web\Report Web\obj\Debug\net6.0\scopedcss\Pages\Modal.razor.rz.scp.css

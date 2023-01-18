@@ -30,7 +30,7 @@
                         <TelerikListView Data="@data">
                             <Template Context="Load">
                                 <div class="crudbtn">
-                                    <span class="upbtn"><TelerikButton Class="crudbtn" ThemeColor="@ThemeConstants.Button.ThemeColor.Primary" @onclick="UpdateData">+</TelerikButton></span>
+                                    <span class="upbtn"><TelerikButton Class="crudbtn" ThemeColor="@ThemeConstants.Button.ThemeColor.Primary" @onclick="@(() => UpdateData(Load))">+</TelerikButton></span>
                                     <span class="delbtn"><TelerikButton Class="crudbtn" ThemeColor="@ThemeConstants.Button.ThemeColor.Primary">x</TelerikButton></span>
                                 </div>
                                 <div class="row data">
@@ -81,19 +81,19 @@
             <WindowAction Name="Close" />
         </WindowActions>
         <WindowContent>
-            <TelerikForm Model="@Daily" OnValidSubmit="HandleValidSubmit">
+            <TelerikForm Model="@daily" OnValidSubmit="HandleValidSubmit">
                 <FormValidation>
                     <DataAnnotationsValidator />
                 </FormValidation>
                 <FormItems>
-                    <FormItem Field="@nameof(Daily.category)" EditorType="@FormEditorType.TextArea"></FormItem>
-                    <FormItem Field="@nameof(Daily.title)" EditorType="@FormEditorType.TextArea"></FormItem>
-                    <FormItem Field="@nameof(Daily.writer)" EditorType="@FormEditorType.TextArea"></FormItem>
-                    <FormItem Field="@nameof(Daily.managers)" EditorType="@FormEditorType.TextArea"></FormItem>
-                    <FormItem Field="@nameof(Daily.important)" EditorType="@FormEditorType.TextArea"></FormItem>
-                    <FormItem Field="@nameof(Daily.progress)" EditorType="@FormEditorType.TextArea"></FormItem>
-                    <FormItem Field="@nameof(Daily.operation)" EditorType="@FormEditorType.TextArea"></FormItem>
-                    <FormItem Field="@nameof(Daily.issue)" EditorType="@FormEditorType.TextArea"></FormItem>
+                    <FormItem Field="@nameof(daily.category)" EditorType="@FormEditorType.TextArea"></FormItem>
+                    <FormItem Field="@nameof(daily.title)" EditorType="@FormEditorType.TextArea"></FormItem>
+                    <FormItem Field="@nameof(daily.writer)" EditorType="@FormEditorType.TextArea"></FormItem>
+                    <FormItem Field="@nameof(daily.managers)" EditorType="@FormEditorType.TextArea"></FormItem>
+                    <FormItem Field="@nameof(daily.important)" EditorType="@FormEditorType.TextArea"></FormItem>
+                    <FormItem Field="@nameof(daily.progress)" EditorType="@FormEditorType.TextArea"></FormItem>
+                    <FormItem Field="@nameof(daily.operation)" EditorType="@FormEditorType.TextArea"></FormItem>
+                    <FormItem Field="@nameof(daily.issue)" EditorType="@FormEditorType.TextArea"></FormItem>
                 </FormItems>
             </TelerikForm>
         </WindowContent>
@@ -109,7 +109,7 @@
     private bool Loaded = false;
     private string[] menus = { "진행", "운영", "이슈" };
     private List<Daily> Dailys { get; set; }
-    private Daily Daily = new Daily();
+    private Daily daily = new Daily();
 
     protected override void OnInitialized()
     {
@@ -166,10 +166,10 @@
         await Task.Delay(1000);
     }
 
-    async void UpdateData()
+    protected void UpdateData(Daily Load)
     {
-        await Task.Delay(1000);
-        Daily = 
+        daily = Load;
+        WindowVisible = true;
     }
 
 }
