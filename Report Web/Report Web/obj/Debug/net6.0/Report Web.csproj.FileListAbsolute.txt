@@ -34,3 +34,9 @@ C:\Users\EBSoft\Desktop\workspace\Cs\Report Web\Report Web\obj\Debug\net6.0\refi
 C:\Users\EBSoft\Desktop\workspace\Cs\Report Web\Report Web\obj\Debug\net6.0\Report Web.pdb
 C:\Users\EBSoft\Desktop\workspace\Cs\Report Web\Report Web\obj\Debug\net6.0\Report Web.genruntimeconfig.cache
 C:\Users\EBSoft\Desktop\workspace\Cs\Report Web\Report Web\obj\Debug\net6.0\ref\Report Web.dll
+C:\Users\EBSoft\Desktop\WorkSpace\Cs\Report Web\Report Web\obj\Debug\net6.0\staticwebassets\msbuild.Report Web.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\EBSoft\Desktop\WorkSpace\Cs\Report Web\Report Web\obj\Debug\net6.0\staticwebassets\msbuild.build.Report Web.props
+C:\Users\EBSoft\Desktop\WorkSpace\Cs\Report Web\Report Web\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.Report Web.props
+C:\Users\EBSoft\Desktop\WorkSpace\Cs\Report Web\Report Web\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.Report Web.props
+C:\Users\EBSoft\Desktop\WorkSpace\Cs\Report Web\Report Web\obj\Debug\net6.0\staticwebassets.pack.json
+C:\Users\EBSoft\Desktop\WorkSpace\Cs\Report Web\Report Web\obj\Debug\net6.0\scopedcss\Pages\Login.razor.rz.scp.css

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "bHygDgBXpH0FkfvKfQ6P4eqS1WlCjsG/rc8A9ZfWuiU=",
+  "Hash": "YWQYn4wmsIIrJ8/j0S1nCyjxYYHJJzpgBWnE7ejtHCU=",
   "Source": "Report Web",
   "BasePath": "_content/Report Web",
   "Mode": "Default",
@@ -10,7 +10,7 @@
     {
       "Name": "Report Web\\wwwroot",
       "Source": "Report Web",
-      "ContentRoot": "C:\\Users\\EBSoft\\Desktop\\workspace\\Cs\\Report Web\\Report Web\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\EBSoft\\Desktop\\WorkSpace\\Cs\\Report Web\\Report Web\\wwwroot\\",
       "BasePath": "_content/Report Web",
       "Pattern": "**"
     }
@@ -136,10 +136,10 @@
       "OriginalItemSpec": "C:\\Users\\EBSoft\\.nuget\\packages\\telerik.ui.for.blazor\\3.7.0\\staticwebassets\\js\\telerik-blazor.js"
     },
     {
-      "Identity": "C:\\Users\\EBSoft\\Desktop\\workspace\\Cs\\Report Web\\Report Web\\obj\\Debug\\net6.0\\scopedcss\\bundle\\Report Web.styles.css",
+      "Identity": "C:\\Users\\EBSoft\\Desktop\\WorkSpace\\Cs\\Report Web\\Report Web\\obj\\Debug\\net6.0\\scopedcss\\bundle\\Report Web.styles.css",
       "SourceId": "Report Web",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\EBSoft\\Desktop\\workspace\\Cs\\Report Web\\Report Web\\obj\\Debug\\net6.0\\scopedcss\\bundle\\",
+      "ContentRoot": "C:\\Users\\EBSoft\\Desktop\\WorkSpace\\Cs\\Report Web\\Report Web\\obj\\Debug\\net6.0\\scopedcss\\bundle\\",
       "BasePath": "_content/Report Web",
       "RelativePath": "Report Web.styles.css",
       "AssetKind": "All",
@@ -150,13 +150,13 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\EBSoft\\Desktop\\workspace\\Cs\\Report Web\\Report Web\\obj\\Debug\\net6.0\\scopedcss\\bundle\\Report Web.styles.css"
+      "OriginalItemSpec": "C:\\Users\\EBSoft\\Desktop\\WorkSpace\\Cs\\Report Web\\Report Web\\obj\\Debug\\net6.0\\scopedcss\\bundle\\Report Web.styles.css"
     },
     {
-      "Identity": "C:\\Users\\EBSoft\\Desktop\\workspace\\Cs\\Report Web\\Report Web\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\Report Web.bundle.scp.css",
+      "Identity": "C:\\Users\\EBSoft\\Desktop\\WorkSpace\\Cs\\Report Web\\Report Web\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\Report Web.bundle.scp.css",
       "SourceId": "Report Web",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\EBSoft\\Desktop\\workspace\\Cs\\Report Web\\Report Web\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\",
+      "ContentRoot": "C:\\Users\\EBSoft\\Desktop\\WorkSpace\\Cs\\Report Web\\Report Web\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\",
       "BasePath": "_content/Report Web",
       "RelativePath": "Report Web.bundle.scp.css",
       "AssetKind": "All",
@@ -167,13 +167,13 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\EBSoft\\Desktop\\workspace\\Cs\\Report Web\\Report Web\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\Report Web.bundle.scp.css"
+      "OriginalItemSpec": "C:\\Users\\EBSoft\\Desktop\\WorkSpace\\Cs\\Report Web\\Report Web\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\Report Web.bundle.scp.css"
     },
     {
-      "Identity": "C:\\Users\\EBSoft\\Desktop\\workspace\\Cs\\Report Web\\Report Web\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+      "Identity": "C:\\Users\\EBSoft\\Desktop\\WorkSpace\\Cs\\Report Web\\Report Web\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
       "SourceId": "Report Web",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\EBSoft\\Desktop\\workspace\\Cs\\Report Web\\Report Web\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\EBSoft\\Desktop\\WorkSpace\\Cs\\Report Web\\Report Web\\wwwroot\\",
       "BasePath": "_content/Report Web",
       "RelativePath": "css/bootstrap/bootstrap.min.css",
       "AssetKind": "All",
@@ -187,10 +187,10 @@
       "OriginalItemSpec": "wwwroot\\css\\bootstrap\\bootstrap.min.css"
     },
     {
-      "Identity": "C:\\Users\\EBSoft\\Desktop\\workspace\\Cs\\Report Web\\Report Web\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
+      "Identity": "C:\\Users\\EBSoft\\Desktop\\WorkSpace\\Cs\\Report Web\\Report Web\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
       "SourceId": "Report Web",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\EBSoft\\Desktop\\workspace\\Cs\\Report Web\\Report Web\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\EBSoft\\Desktop\\WorkSpace\\Cs\\Report Web\\Report Web\\wwwroot\\",
       "BasePath": "_content/Report Web",
       "RelativePath": "css/bootstrap/bootstrap.min.css.map",
       "AssetKind": "All",
@@ -204,10 +204,10 @@
       "OriginalItemSpec": "wwwroot\\css\\bootstrap\\bootstrap.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\EBSoft\\Desktop\\workspace\\Cs\\Report Web\\Report Web\\wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css",
+      "Identity": "C:\\Users\\EBSoft\\Desktop\\WorkSpace\\Cs\\Report Web\\Report Web\\wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css",
       "SourceId": "Report Web",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\EBSoft\\Desktop\\workspace\\Cs\\Report Web\\Report Web\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\EBSoft\\Desktop\\WorkSpace\\Cs\\Report Web\\Report Web\\wwwroot\\",
       "BasePath": "_content/Report Web",
       "RelativePath": "css/open-iconic/font/css/open-iconic-bootstrap.min.css",
       "AssetKind": "All",
@@ -221,10 +221,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css"
     },
     {
-      "Identity": "C:\\Users\\EBSoft\\Desktop\\workspace\\Cs\\Report Web\\Report Web\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.eot",
+      "Identity": "C:\\Users\\EBSoft\\Desktop\\WorkSpace\\Cs\\Report Web\\Report Web\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.eot",
       "SourceId": "Report Web",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\EBSoft\\Desktop\\workspace\\Cs\\Report Web\\Report Web\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\EBSoft\\Desktop\\WorkSpace\\Cs\\Report Web\\Report Web\\wwwroot\\",
       "BasePath": "_content/Report Web",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.eot",
       "AssetKind": "All",
@@ -238,10 +238,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.eot"
     },
     {
-      "Identity": "C:\\Users\\EBSoft\\Desktop\\workspace\\Cs\\Report Web\\Report Web\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.otf",
+      "Identity": "C:\\Users\\EBSoft\\Desktop\\WorkSpace\\Cs\\Report Web\\Report Web\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.otf",
       "SourceId": "Report Web",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\EBSoft\\Desktop\\workspace\\Cs\\Report Web\\Report Web\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\EBSoft\\Desktop\\WorkSpace\\Cs\\Report Web\\Report Web\\wwwroot\\",
       "BasePath": "_content/Report Web",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.otf",
       "AssetKind": "All",
@@ -255,10 +255,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.otf"
     },
     {
-      "Identity": "C:\\Users\\EBSoft\\Desktop\\workspace\\Cs\\Report Web\\Report Web\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.svg",
+      "Identity": "C:\\Users\\EBSoft\\Desktop\\WorkSpace\\Cs\\Report Web\\Report Web\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.svg",
       "SourceId": "Report Web",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\EBSoft\\Desktop\\workspace\\Cs\\Report Web\\Report Web\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\EBSoft\\Desktop\\WorkSpace\\Cs\\Report Web\\Report Web\\wwwroot\\",
       "BasePath": "_content/Report Web",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.svg",
       "AssetKind": "All",
@@ -272,10 +272,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.svg"
     },
     {
-      "Identity": "C:\\Users\\EBSoft\\Desktop\\workspace\\Cs\\Report Web\\Report Web\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.ttf",
+      "Identity": "C:\\Users\\EBSoft\\Desktop\\WorkSpace\\Cs\\Report Web\\Report Web\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.ttf",
       "SourceId": "Report Web",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\EBSoft\\Desktop\\workspace\\Cs\\Report Web\\Report Web\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\EBSoft\\Desktop\\WorkSpace\\Cs\\Report Web\\Report Web\\wwwroot\\",
       "BasePath": "_content/Report Web",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.ttf",
       "AssetKind": "All",
@@ -289,10 +289,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.ttf"
     },
     {
-      "Identity": "C:\\Users\\EBSoft\\Desktop\\workspace\\Cs\\Report Web\\Report Web\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff",
+      "Identity": "C:\\Users\\EBSoft\\Desktop\\WorkSpace\\Cs\\Report Web\\Report Web\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff",
       "SourceId": "Report Web",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\EBSoft\\Desktop\\workspace\\Cs\\Report Web\\Report Web\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\EBSoft\\Desktop\\WorkSpace\\Cs\\Report Web\\Report Web\\wwwroot\\",
       "BasePath": "_content/Report Web",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.woff",
       "AssetKind": "All",
@@ -306,10 +306,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff"
     },
     {
-      "Identity": "C:\\Users\\EBSoft\\Desktop\\workspace\\Cs\\Report Web\\Report Web\\wwwroot\\css\\open-iconic\\FONT-LICENSE",
+      "Identity": "C:\\Users\\EBSoft\\Desktop\\WorkSpace\\Cs\\Report Web\\Report Web\\wwwroot\\css\\open-iconic\\FONT-LICENSE",
       "SourceId": "Report Web",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\EBSoft\\Desktop\\workspace\\Cs\\Report Web\\Report Web\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\EBSoft\\Desktop\\WorkSpace\\Cs\\Report Web\\Report Web\\wwwroot\\",
       "BasePath": "_content/Report Web",
       "RelativePath": "css/open-iconic/FONT-LICENSE",
       "AssetKind": "All",
@@ -323,10 +323,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\FONT-LICENSE"
     },
     {
-      "Identity": "C:\\Users\\EBSoft\\Desktop\\workspace\\Cs\\Report Web\\Report Web\\wwwroot\\css\\open-iconic\\ICON-LICENSE",
+      "Identity": "C:\\Users\\EBSoft\\Desktop\\WorkSpace\\Cs\\Report Web\\Report Web\\wwwroot\\css\\open-iconic\\ICON-LICENSE",
       "SourceId": "Report Web",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\EBSoft\\Desktop\\workspace\\Cs\\Report Web\\Report Web\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\EBSoft\\Desktop\\WorkSpace\\Cs\\Report Web\\Report Web\\wwwroot\\",
       "BasePath": "_content/Report Web",
       "RelativePath": "css/open-iconic/ICON-LICENSE",
       "AssetKind": "All",
@@ -340,10 +340,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\ICON-LICENSE"
     },
     {
-      "Identity": "C:\\Users\\EBSoft\\Desktop\\workspace\\Cs\\Report Web\\Report Web\\wwwroot\\css\\open-iconic\\README.md",
+      "Identity": "C:\\Users\\EBSoft\\Desktop\\WorkSpace\\Cs\\Report Web\\Report Web\\wwwroot\\css\\open-iconic\\README.md",
       "SourceId": "Report Web",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\EBSoft\\Desktop\\workspace\\Cs\\Report Web\\Report Web\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\EBSoft\\Desktop\\WorkSpace\\Cs\\Report Web\\Report Web\\wwwroot\\",
       "BasePath": "_content/Report Web",
       "RelativePath": "css/open-iconic/README.md",
       "AssetKind": "All",
@@ -357,10 +357,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\README.md"
     },
     {
-      "Identity": "C:\\Users\\EBSoft\\Desktop\\workspace\\Cs\\Report Web\\Report Web\\wwwroot\\css\\site.css",
+      "Identity": "C:\\Users\\EBSoft\\Desktop\\WorkSpace\\Cs\\Report Web\\Report Web\\wwwroot\\css\\site.css",
       "SourceId": "Report Web",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\EBSoft\\Desktop\\workspace\\Cs\\Report Web\\Report Web\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\EBSoft\\Desktop\\WorkSpace\\Cs\\Report Web\\Report Web\\wwwroot\\",
       "BasePath": "_content/Report Web",
       "RelativePath": "css/site.css",
       "AssetKind": "All",
@@ -374,10 +374,10 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
-      "Identity": "C:\\Users\\EBSoft\\Desktop\\workspace\\Cs\\Report Web\\Report Web\\wwwroot\\favicon.ico",
+      "Identity": "C:\\Users\\EBSoft\\Desktop\\WorkSpace\\Cs\\Report Web\\Report Web\\wwwroot\\favicon.ico",
       "SourceId": "Report Web",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\EBSoft\\Desktop\\workspace\\Cs\\Report Web\\Report Web\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\EBSoft\\Desktop\\WorkSpace\\Cs\\Report Web\\Report Web\\wwwroot\\",
       "BasePath": "_content/Report Web",
       "RelativePath": "favicon.ico",
       "AssetKind": "All",

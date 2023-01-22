@@ -1,0 +1,57 @@
+﻿
+
+<div class="container">
+    <div class="LoginBox">
+        <div class="LoginImg">
+            <img class="img" src="Image/login.jpg" />
+        </div>
+        <div class="LoginData">
+            <TelerikForm Model="@Loginfo" OnSubmit="LoginCheck" Width="100%">
+                <FormItems>
+                    <div class="id">
+                        <FormItem Class="loginput" Field="@nameof(Loginfo.Id)"></FormItem>
+                    </div>
+                    <div class="pw">
+                        <FormItem Class="loginput" Field="@nameof(Loginfo.Pw)"></FormItem>
+                    </div>
+                </FormItems>
+                <FormButtons>
+                    <div class="Login">
+                        <TelerikButton ButtonType="ButtonType.Submit" ThemeColor="@ThemeConstants.Button.ThemeColor.Primary">로그인</TelerikButton>
+                    </div>
+                </FormButtons>
+            </TelerikForm>
+            @checkmsg
+        </div>
+        <div class="Loginbtn">
+            <span class="Forgot"><a href="">아이디/비밀번호 찾기</a></span>
+            <span class="Joinus"><a href="">회원가입</a></span>
+        </div>
+    </div>
+</div>
+
+
+
+
+@code {
+    private Member? Loginfo = new Member();
+
+    public string? checkmsg;
+
+    async void LoginCheck()
+    {
+        await Task.Delay(1000);
+        checkmsg = "로그인 시도";
+        navigationManager.NavigateTo("/main");
+    }
+}
+
+
+
+
+
+<style>
+    .loginput {
+        height: 20px;
+    }
+</style>
