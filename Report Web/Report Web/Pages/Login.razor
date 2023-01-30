@@ -39,12 +39,6 @@
     protected async override Task OnInitializedAsync()
     {
         await Task.Delay(1000);
-        Members.Add(new Member { Id = "admin", Pw = "admin", Email = "admin@ebsoft.kr" });
-        //await MemberService.CreateMemberAsync(Members[0]);
-
-        Console.WriteLine(Members[0].Id);
-        Console.WriteLine(Members[0].Pw);
-        Console.WriteLine(Members[0].Email);
     }
 
     async void LoginCheck()
@@ -52,7 +46,7 @@
         Member result = new();
         if(Loginfo.Id != null)
         {
-            //result = await MemberService.GetMemberByIdAsync(Loginfo.Id);
+            
         }
         if(result != null)
         {
