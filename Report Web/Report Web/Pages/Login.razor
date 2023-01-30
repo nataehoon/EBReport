@@ -21,7 +21,6 @@
                     </div>
                 </FormButtons>
             </TelerikForm>
-            @checkmsg
         </div>
         <div class="Loginbtn">
             <span class="Forgot"><a href="">아이디/비밀번호 찾기</a></span>
@@ -34,15 +33,37 @@
 
 
 @code {
-    private Member? Loginfo = new Member();
+    private Member Loginfo = new Member();
+    private List<Member> Members = new List<Member>();
 
-    public string? checkmsg;
+    protected async override Task OnInitializedAsync()
+    {
+        await Task.Delay(1000);
+        Members.Add(new Member { Id = "admin", Pw = "admin", Email = "admin@ebsoft.kr" });
+        //await MemberService.CreateMemberAsync(Members[0]);
+
+        Console.WriteLine(Members[0].Id);
+        Console.WriteLine(Members[0].Pw);
+        Console.WriteLine(Members[0].Email);
+    }
 
     async void LoginCheck()
     {
-        await Task.Delay(1000);
-        checkmsg = "로그인 시도";
-        navigationManager.NavigateTo("/main");
+        Member result = new();
+        if(Loginfo.Id != null)
+        {
+            //result = await MemberService.GetMemberByIdAsync(Loginfo.Id);
+        }
+        if(result != null)
+        {
+            await Task.Delay(1000);
+            navigationManager.NavigateTo("/main");
+        }
+        else
+        {
+            
+        }
+
     }
 }
 

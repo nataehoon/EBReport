@@ -224,7 +224,7 @@
 }
 
 .data-progress[b-oavzrfse27] {
-    width: 31%;
+    width: 100%;
     border-right: 5px #d5e1df inset;
     border-bottom: 5px #d5e1df inset;
     height: 100%;
@@ -243,7 +243,7 @@
 }
 
 .data-operation[b-oavzrfse27] {
-    width: 31%;
+    width: 100%;
     border-right: 5px #d5e1df inset;
     border-bottom: 5px #d5e1df inset;
     height: 100%;
@@ -259,7 +259,7 @@
 }
 
 .data-issues[b-oavzrfse27] {
-    width: 31%;
+    width: 100%;
     border-right: 5px #d5e1df inset;
     border-bottom: 5px #d5e1df inset;
     height: 100%;

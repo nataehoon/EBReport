@@ -1,4 +1,6 @@
 global using System.ComponentModel.DataAnnotations;
+global using Report_Web.Model;
+global using Report_Web.Data;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 
@@ -7,6 +9,9 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
+//builder.Services.AddScoped<IMemberService, MemberService>();
+//builder.Services.AddScoped<IProjectManageService, ProjectManageService>();
+//builder.Services.AddScoped<IDailyService, DailyService>();
 
 builder.Services.AddTelerikBlazor();
 

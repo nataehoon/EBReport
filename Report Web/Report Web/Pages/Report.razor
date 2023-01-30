@@ -23,9 +23,9 @@
 
                 <DetailTemplate Context="detailContext">
                     @{
-                        int currentId = detailContext.no;
+                        int currentId = detailContext.No;
 
-                        var data = Dailys.Where(x => x.no == currentId);
+                        var data = Dailys.Where(x => x.No == currentId);
 
                         <TelerikListView Data="@data">
                             <Template Context="Load">
@@ -33,13 +33,13 @@
                                     <span class="upbtn"><TelerikButton Class="crudbtn" ThemeColor="@ThemeConstants.Button.ThemeColor.Primary" @onclick="@(() => UpdateData(Load))">+</TelerikButton></span>
                                     <span class="delbtn"><TelerikButton Class="crudbtn" ThemeColor="@ThemeConstants.Button.ThemeColor.Primary">x</TelerikButton></span>
                                 </div>
-                                <div class="row data">
+                                <div class="data">
                                     <div class="data-progress">
                                         <div class="data-header">
                                             @menus[0]
                                         </div>
                                         <div class="data-content">
-                                            <p class="cont-text">@Load.progress</p>
+                                            <p class="cont-text">@Load.Progress</p>
                                         </div>
                                     </div>
                                     <div class="data-operation">
@@ -47,7 +47,7 @@
                                             @menus[1]
                                         </div>
                                         <div class="data-content">
-                                            <p class="cont-text">@Load.operation</p>
+                                            <p class="cont-text">@Load.Operation</p>
                                         </div>
                                     </div>
                                     <div class="data-issues">
@@ -55,7 +55,7 @@
                                             @menus[2]
                                         </div>
                                         <div class="data-content">
-                                            <p class="cont-text">@Load.issue</p>
+                                            <p class="cont-text">@Load.Issue</p>
                                         </div>
                                     </div>
                                 </div>
@@ -65,9 +65,9 @@
                 </DetailTemplate>
 
                 <GridColumns>
-                    <GridColumn Field="title" Title="제목" Width="54%" />
-                    <GridColumn Field="writer" Title="작성자" Width="25%"/>
-                    <GridColumn Field="important" Title="중요도" Width="22%" />
+                    <GridColumn Field="Title" Title="제목" Width="54%" />
+                    <GridColumn Field="Writer" Title="작성자" Width="25%"/>
+                    <GridColumn Field="Important" Title="중요도" Width="22%" />
                 </GridColumns>
             </TelerikGrid>
         </div>
@@ -86,14 +86,14 @@
                     <DataAnnotationsValidator />
                 </FormValidation>
                 <FormItems>
-                    <FormItem Field="@nameof(daily.category)" EditorType="@FormEditorType.TextArea"></FormItem>
-                    <FormItem Field="@nameof(daily.title)" EditorType="@FormEditorType.TextArea"></FormItem>
-                    <FormItem Field="@nameof(daily.writer)" EditorType="@FormEditorType.TextArea"></FormItem>
-                    <FormItem Field="@nameof(daily.managers)" EditorType="@FormEditorType.TextArea"></FormItem>
-                    <FormItem Field="@nameof(daily.important)" EditorType="@FormEditorType.TextArea"></FormItem>
-                    <FormItem Field="@nameof(daily.progress)" EditorType="@FormEditorType.TextArea"></FormItem>
-                    <FormItem Field="@nameof(daily.operation)" EditorType="@FormEditorType.TextArea"></FormItem>
-                    <FormItem Field="@nameof(daily.issue)" EditorType="@FormEditorType.TextArea"></FormItem>
+                    <FormItem Field="@nameof(daily.Category)" EditorType="@FormEditorType.TextArea"></FormItem>
+                    <FormItem Field="@nameof(daily.Title)" EditorType="@FormEditorType.TextArea"></FormItem>
+                    <FormItem Field="@nameof(daily.Writer)" EditorType="@FormEditorType.TextArea"></FormItem>
+                    <FormItem Field="@nameof(daily.Managers)" EditorType="@FormEditorType.TextArea"></FormItem>
+                    <FormItem Field="@nameof(daily.Important)" EditorType="@FormEditorType.TextArea"></FormItem>
+                    <FormItem Field="@nameof(daily.Progress)" EditorType="@FormEditorType.TextArea"></FormItem>
+                    <FormItem Field="@nameof(daily.Operation)" EditorType="@FormEditorType.TextArea"></FormItem>
+                    <FormItem Field="@nameof(daily.Issue)" EditorType="@FormEditorType.TextArea"></FormItem>
                 </FormItems>
             </TelerikForm>
         </WindowContent>
@@ -117,43 +117,43 @@
 
         if (category.Equals("국방부"))
         {
-            Dailys.Add(new Daily { no = 0, category = "국방부", title = "20230101", writer = "나태훈", managers = "이창노, 심상민, 이성훈", important = "3", operation="운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다. 운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다."});
-            Dailys.Add(new Daily { no = 1, category = "국방부", title = "20230102", writer = "나태훈", managers = "이창노, 심상민, 이성훈", important = "1"});
-            Dailys.Add(new Daily { no = 2, category = "국방부", title = "20230103", writer = "나태훈", managers = "이창노, 심상민, 이성훈", important = "6"});
-            Dailys.Add(new Daily { no = 3, category = "국방부", title = "20230104", writer = "나태훈", managers = "이창노, 심상민, 이성훈", important = "7"});
-            Dailys.Add(new Daily { no = 4, category = "국방부", title = "20230105", writer = "나태훈", managers = "이창노, 심상민, 이성훈", important = "2"});
-            Dailys.Add(new Daily { no = 5, category = "국방부", title = "20230106", writer = "나태훈", managers = "이창노, 심상민, 이성훈", important = "3"});
-            Dailys.Add(new Daily { no = 6, category = "국방부", title = "20230107", writer = "나태훈", managers = "이창노, 심상민, 이성훈", important = "1"});
-            Dailys.Add(new Daily { no = 7, category = "국방부", title = "20230108", writer = "나태훈", managers = "이창노, 심상민, 이성훈", important = "6"});
-            Dailys.Add(new Daily { no = 8, category = "국방부", title = "20230109", writer = "나태훈", managers = "이창노, 심상민, 이성훈", important = "7"});
-            Dailys.Add(new Daily { no = 9, category = "국방부", title = "20230110", writer = "나태훈", managers = "이창노, 심상민, 이성훈", important = "2"});
+            Dailys.Add(new Daily { No = 0, Category = "국방부", Title = "20230101", Writer = "나태훈", Managers = "이창노, 심상민, 이성훈", Important = "3", Operation="운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다. 운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다.운영중 이상 없습니다."});
+            Dailys.Add(new Daily { No = 1, Category = "국방부", Title = "20230102", Writer = "나태훈", Managers = "이창노, 심상민, 이성훈", Important = "1"});
+            Dailys.Add(new Daily { No = 2, Category = "국방부", Title = "20230103", Writer = "나태훈", Managers = "이창노, 심상민, 이성훈", Important = "6"});
+            Dailys.Add(new Daily { No = 3, Category = "국방부", Title = "20230104", Writer = "나태훈", Managers = "이창노, 심상민, 이성훈", Important = "7"});
+            Dailys.Add(new Daily { No = 4, Category = "국방부", Title = "20230105", Writer = "나태훈", Managers = "이창노, 심상민, 이성훈", Important = "2"});
+            Dailys.Add(new Daily { No = 5, Category = "국방부", Title = "20230106", Writer = "나태훈", Managers = "이창노, 심상민, 이성훈", Important = "3"});
+            Dailys.Add(new Daily { No = 6, Category = "국방부", Title = "20230107", Writer = "나태훈", Managers = "이창노, 심상민, 이성훈", Important = "1"});
+            Dailys.Add(new Daily { No = 7, Category = "국방부", Title = "20230108", Writer = "나태훈", Managers = "이창노, 심상민, 이성훈", Important = "6"});
+            Dailys.Add(new Daily { No = 8, Category = "국방부", Title = "20230109", Writer = "나태훈", Managers = "이창노, 심상민, 이성훈", Important = "7"});
+            Dailys.Add(new Daily { No = 9, Category = "국방부", Title = "20230110", Writer = "나태훈", Managers = "이창노, 심상민, 이성훈", Important = "2"});
         }
 
         if (category.Equals("FIS"))
         {
-            Dailys.Add(new Daily { no = 0, category = "FIS", title = "20230101", writer = "나태훈", managers = "김강한, 정민정", important = "3"});
-            Dailys.Add(new Daily { no = 1, category = "FIS", title = "20230102", writer = "나태훈", managers = "김강한, 정민정", important = "1"});
-            Dailys.Add(new Daily { no = 2, category = "FIS", title = "20230103", writer = "나태훈", managers = "김강한, 정민정", important = "6"});
-            Dailys.Add(new Daily { no = 3, category = "FIS", title = "20230104", writer = "나태훈", managers = "김강한, 정민정", important = "7"});
-            Dailys.Add(new Daily { no = 4, category = "FIS", title = "20230105", writer = "나태훈", managers = "김강한, 정민정", important = "2"});
+            Dailys.Add(new Daily { No = 0, Category = "FIS", Title = "20230101", Writer = "나태훈", Managers = "김강한, 정민정", Important = "3"});
+            Dailys.Add(new Daily { No = 1, Category = "FIS", Title = "20230102", Writer = "나태훈", Managers = "김강한, 정민정", Important = "1"});
+            Dailys.Add(new Daily { No = 2, Category = "FIS", Title = "20230103", Writer = "나태훈", Managers = "김강한, 정민정", Important = "6"});
+            Dailys.Add(new Daily { No = 3, Category = "FIS", Title = "20230104", Writer = "나태훈", Managers = "김강한, 정민정", Important = "7"});
+            Dailys.Add(new Daily { No = 4, Category = "FIS", Title = "20230105", Writer = "나태훈", Managers = "김강한, 정민정", Important = "2"});
         }
 
         if (category.Equals("방송통신대학교"))
         {
-            Dailys.Add(new Daily { no = 0, category = "방송통신대학교", title = "20230101", writer = "나태훈", managers = "이창노, 김강한, 이희범", important = "3" });
-            Dailys.Add(new Daily { no = 1, category = "방송통신대학교", title = "20230102", writer = "나태훈", managers = "이창노, 김강한, 이희범", important = "1" });
-            Dailys.Add(new Daily { no = 2, category = "방송통신대학교", title = "20230103", writer = "나태훈", managers = "이창노, 김강한, 이희범", important = "6" });
-            Dailys.Add(new Daily { no = 3, category = "방송통신대학교", title = "20230104", writer = "나태훈", managers = "이창노, 김강한, 이희범", important = "7" });
-            Dailys.Add(new Daily { no = 4, category = "방송통신대학교", title = "20230105", writer = "나태훈", managers = "이창노, 김강한, 이희범", important = "2" });
+            Dailys.Add(new Daily { No = 0, Category = "방송통신대학교", Title = "20230101", Writer = "나태훈", Managers = "이창노, 김강한, 이희범", Important = "3" });
+            Dailys.Add(new Daily { No = 1, Category = "방송통신대학교", Title = "20230102", Writer = "나태훈", Managers = "이창노, 김강한, 이희범", Important = "1" });
+            Dailys.Add(new Daily { No = 2, Category = "방송통신대학교", Title = "20230103", Writer = "나태훈", Managers = "이창노, 김강한, 이희범", Important = "6" });
+            Dailys.Add(new Daily { No = 3, Category = "방송통신대학교", Title = "20230104", Writer = "나태훈", Managers = "이창노, 김강한, 이희범", Important = "7" });
+            Dailys.Add(new Daily { No = 4, Category = "방송통신대학교", Title = "20230105", Writer = "나태훈", Managers = "이창노, 김강한, 이희범", Important = "2" });
         }
 
         if (category.Equals("제주은행"))
         {
-            Dailys.Add(new Daily { no = 0, category = "제주은행", title = "20230101", writer = "나태훈", managers = "이창노, 김강한, 나태훈", important = "3" });
-            Dailys.Add(new Daily { no = 1, category = "제주은행", title = "20230102", writer = "나태훈", managers = "이창노, 김강한, 나태훈", important = "1" });
-            Dailys.Add(new Daily { no = 2, category = "제주은행", title = "20230103", writer = "나태훈", managers = "이창노, 김강한, 나태훈", important = "6" });
-            Dailys.Add(new Daily { no = 3, category = "제주은행", title = "20230104", writer = "나태훈", managers = "이창노, 김강한, 나태훈", important = "7" });
-            Dailys.Add(new Daily { no = 4, category = "제주은행", title = "20230105", writer = "나태훈", managers = "이창노, 김강한, 나태훈", important = "2" });
+            Dailys.Add(new Daily { No = 0, Category = "제주은행", Title = "20230101", Writer = "나태훈", Managers = "이창노, 김강한, 나태훈", Important = "3" });
+            Dailys.Add(new Daily { No = 1, Category = "제주은행", Title = "20230102", Writer = "나태훈", Managers = "이창노, 김강한, 나태훈", Important = "1" });
+            Dailys.Add(new Daily { No = 2, Category = "제주은행", Title = "20230103", Writer = "나태훈", Managers = "이창노, 김강한, 나태훈", Important = "6" });
+            Dailys.Add(new Daily { No = 3, Category = "제주은행", Title = "20230104", Writer = "나태훈", Managers = "이창노, 김강한, 나태훈", Important = "7" });
+            Dailys.Add(new Daily { No = 4, Category = "제주은행", Title = "20230105", Writer = "나태훈", Managers = "이창노, 김강한, 나태훈", Important = "2" });
         }
 
         Loaded = true;
