@@ -6,7 +6,7 @@
         <div class="header">
             <span class="title">Project</span>
             <span class="formbtn">
-                <TelerikButton Class="telerincbtn" ThemeColor="@ThemeConstants.Button.ThemeColor.Primary" OnClick="@(() => {WindowVisible = true; btnText = "Create";})"><p class="btntext">생성</p></TelerikButton>
+                <TelerikButton Class="telerincbtn" ThemeColor="@ThemeConstants.Button.ThemeColor.Primary" OnClick="@(() => {WindowVisible = true; btnText = "Create";projectManage = new ProjectManage();})"><p class="btntext">생성</p></TelerikButton>
             </span>
         </div>
         <div class="row">
@@ -43,8 +43,8 @@
                                 <div class="box-content2">
                                     <span class="cont-period">@ProjectInfo.Startperiod.ToShortDateString() ~ @ProjectInfo.Endperiod.ToShortDateString()</span>
                                     <span class="cont-btn">
-                                        <TelerikButton Class="crudbtn" ThemeColor="@ThemeConstants.Button.ThemeColor.Primary" OnClick="@(async () => UpdateData(ProjectInfo))">+</TelerikButton>
-                                        <TelerikButton Class="crudbtn" ThemeColor="@ThemeConstants.Button.ThemeColor.Primary">x</TelerikButton>
+                                        <TelerikButton Class="crudbtn" ThemeColor="@ThemeConstants.Button.ThemeColor.Primary" OnClick="@(() => UpdateData(ProjectInfo))">+</TelerikButton>
+                                        <TelerikButton Class="crudbtn" ThemeColor="@ThemeConstants.Button.ThemeColor.Primary" OnClick="@(() => DeleteData(ProjectInfo.Projectno))">x</TelerikButton>
                                     </span>
                                 </div>
                                 <div class="progress">
@@ -80,8 +80,8 @@
             <FormItems>
                 <FormItem Field="@nameof(projectManage.Title)" EditorType="@FormEditorType.TextArea"></FormItem>
                 <FormItem Field="@nameof(projectManage.Manager)" EditorType="@FormEditorType.TextArea"></FormItem>
-                <FormItem Field="@nameof(projectManage.Startperiod)" EditorType="@FormEditorType.DateTimePicker"></FormItem>
-                <FormItem Field="@nameof(projectManage.Endperiod)" EditorType="@FormEditorType.DateTimePicker"></FormItem>
+                <FormItem Field="@nameof(projectManage.Startperiod)"></FormItem>
+                <FormItem Field="@nameof(projectManage.Endperiod)"></FormItem>
             </FormItems>
             <FormButtons>
                 <TelerikButton ButtonType="ButtonType.Submit" ThemeColor="@ThemeConstants.Button.ThemeColor.Primary">@btnText</TelerikButton>
@@ -139,21 +139,59 @@
     async void HandleValidSubmit()
     {
         Console.WriteLine("서밋");
+        Console.WriteLine(projectManage.Startperiod + " // " + projectManage.Endperiod);
         if (btnText.Equals("Create"))
         {
-            ProjectmanageService.ProjectmanageCreate(projectManage);
             Console.WriteLine("생성");
-            
+            try
+            {
+                ProjectmanageService.ProjectManageCreate(projectManage);
+                Console.WriteLine("성공");
+                navigationManager.NavigateTo("/main", forceLoad:true);
+            }
+            catch
+            {
+                Console.WriteLine("실패");
+            }
+        }
+        else
+        {
+            Console.WriteLine("수정");
+            try
+            {
+                ProjectmanageService.ProjectManageUpdate(projectManage.Projectno, projectManage);
+                Console.WriteLine("성공");
+                navigationManager.NavigateTo("/main", forceLoad: true);
+            }
+            catch
+            {
+                Console.WriteLine("실패");
+            }
         }
         await Task.Delay(1000);
     }
 
-    async void UpdateData(ProjectManage ProjectInfo)
+    private void UpdateData(ProjectManage ProjectInfo)
     {
         btnText = "Update";
         projectManage = ProjectInfo;
-        await Task.Delay(1000);
         WindowVisible = true;
+    }
+
+    private void DeleteData(int no)
+    {
+        Console.WriteLine("삭제");
+        try
+        {
+            ProjectmanageService.ProjectManageDelete(no);
+            Console.WriteLine("성공");
+            navigationManager.NavigateTo("/main", forceLoad: true);
+        }
+        catch
+        {
+            Console.WriteLine("실패");
+        }
+
     }
 }
 
