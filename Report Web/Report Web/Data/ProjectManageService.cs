@@ -1,84 +1,35 @@
-﻿using Microsoft.AspNetCore.Components;
-using Report_Web.Model;
+﻿using Report_Web.Model;
+using System.Data;
 
 namespace Report_Web.Data
 {
-    public interface IProjectManageService
+    public class ProjectmanageService
     {
-        Task<List<ProjectManage>> GetProjectManageAsync();
-        Task CreateProjectManageAsync(ProjectManage model);
-        Task DeleteProjectManageAsync(int no);
-        Task UpdateProjectManageAsync(int no, ProjectManage model);
-        Task<ProjectManage> GetProjectManageByNoAsync(int no);
-    }
-    public class ProjectManageService : IProjectManageService
-    {
-        private List<ProjectManage> ProjectManages { get; set; }
-
-        private readonly NavigationManager navigationManager;
-
-        public ProjectManageService(NavigationManager _navigationManager)
+        public static List<ProjectManage> ProjectManageAllSelect()
         {
-            navigationManager = _navigationManager;
-        }
+            string sql = $"SELECT * FROM PROJECTMANAGE";
+            DataTable dt = SQLServer.SQLServerSelect(sql);
 
-        public async Task CreateProjectManageAsync(ProjectManage model)
-        {
-            ProjectManages.Add(model);
-            await Task.Delay(1000);
-            navigationManager.NavigateTo("/");
-        }
-
-        public async Task DeleteProjectManageAsync(int no)
-        {
-            foreach (var projectmansger in ProjectManages)
+            List<ProjectManage> projectlist = new List<ProjectManage>();
+            for(int i = 0; i < dt.Rows.Count; i++)
             {
-                if (projectmansger.no == no)
-                {
-                    ProjectManages.Remove(projectmansger);
-                }
+                ProjectManage project = new ProjectManage();
+
+                project.Title = dt.Rows[i]["Title"].ToString();
+                project.Manager = dt.Rows[i]["Managers"].ToString();
+                project.Startperiod = (DateTime)dt.Rows[i]["Startperiod"];
+                project.Endperiod = (DateTime)dt.Rows[i]["Endperiod"];
+
+                projectlist.Add(project);
             }
-            await Task.Delay(1000);
-            navigationManager.NavigateTo("/");
+
+            return projectlist;
         }
 
-        public async Task<List<ProjectManage>> GetProjectManageAsync()
+        public static void ProjectmanageCreate(ProjectManage model)
         {
-            await Task.Delay(1000);
-            return ProjectManages;
-        }
-
-        public async Task<ProjectManage> GetProjectManageByNoAsync(int no)
-        {
-            ProjectManage findprojectmanage = new();
-            foreach (var projectmansger in ProjectManages)
-            {
-                if (projectmansger.no == no)
-                {
-                    findprojectmanage = projectmansger;
-                    return findprojectmanage;
-                }
-            }
-            await Task.Delay(1000);
-            navigationManager.NavigateTo("/");
-            return findprojectmanage;
-        }
-
-        public async Task UpdateProjectManageAsync(int no, ProjectManage model)
-        {
-            foreach (var projectmansger in ProjectManages)
-            {
-                if (projectmansger.no == no)
-                {
-                    projectmansger.no = model.no;
-                    projectmansger.title = model.title;
-                    projectmansger.member = model.member;
-                    projectmansger.startperiod = model.startperiod;
-                    projectmansger.endperiod = model.endperiod;
-                }
-            }
-            await Task.Delay(1000);
-            navigationManager.NavigateTo("/");
+            string sql = $"INSERT INTO PROJECTMANAGE(Title, managers, Startperiod, Endperiod, Totalperiod, Progress) VALUES('{model.Title}','{model.Manager}', '{(DateTime)model.Startperiod}', '{(DateTime)model.Endperiod}', 0, 0)";
+            SQLServer.SQLServerSelect(sql);
         }
     }
 }

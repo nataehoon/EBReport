@@ -3,18 +3,18 @@
     public class ProjectManage
     {
         [Editable(false)]
-        public int no { get; set; }
+        public int Projectno { get; set; }
         [Display(Name = "프로젝트 명")]
-        public string? title { get; set; }
+        public string? Title { get; set; }
         [Display(Name = "프로젝트 참여 인원")]
-        public string? member { get; set; }
+        public string? Manager { get; set; }
         [Display(Name = "프로젝트 시작일")]
-        public DateTime startperiod { get; set; }
+        public DateTime Startperiod { get; set; }
         [Display(Name = "프로젝트 종료일")]
-        public DateTime endperiod { get; set; }
+        public DateTime Endperiod { get; set; }
         [Editable(false)]
-        public int progress { get; set; }
+        public int Progress { get; set; }
         [Editable(false)]
-        public int totalperiod { get; set; }
+        public int Totalperiod { get; set; }
     }
 }

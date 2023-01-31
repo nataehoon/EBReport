@@ -1,82 +1,40 @@
-﻿using Microsoft.AspNetCore.Components;
-using System.Linq;
+﻿using System.Data;
 
 namespace Report_Web.Data
 {
-    public interface IMemberService
+    public class MemberService
     {
-        Task<List<Member>> GetMembersAsync();
-        Task CreateMemberAsync(Member model);
-        Task DeleteMemberAsync(string id);
-        Task UpdateMemberAsync(string id, Member model);
-        Task<Member> GetMemberByIdAsync(string id);
-    }
-    public class MemberService : IMemberService
-    {
-        private readonly List<Member> Members;
-        private readonly NavigationManager navigationManager;
-
-        public MemberService(List<Member> _Members, NavigationManager _navigationManager)
+        public static List<Member> MemberAllSelect() 
         {
-            Members = _Members;
-            navigationManager = _navigationManager;
-        }
-
-        public async Task CreateMemberAsync(Member model)
-        {
+            string sql = $"SELECT * FROM MEMBER";
+            DataTable dt = SQLServer.SQLServerSelect(sql);
             
-            await Task.Delay(1000);
-            navigationManager.NavigateTo("/");
-        }
-
-        public async Task DeleteMemberAsync(string id)
-        {
-            foreach (var member in Members)
+            List<Member> members = new List<Member>();
+            
+            for(int i = 0; i < dt.Rows.Count; i++)
             {
-                if (member.Id.Equals(id))
-                {
-                    Members.Remove(member);
-                }
+                Member member = new Member();
+                member.Id = dt.Rows[i]["Id"].ToString();
+                member.Pw = dt.Rows[i]["Pw"].ToString();
+                member.Email = dt.Rows[i]["Email"].ToString();
+
+                members.Add(member);
             }
-            await Task.Delay(1000);
-            navigationManager.NavigateTo("/");
+
+            return members;
         }
 
-        public async Task<Member> GetMemberByIdAsync(string id)
+        public static Member MemberByIdSelect(string id)
         {
-            Member findmember = new();
-            foreach (var member in Members)
-            {
-                if (member.Id.Equals(id))
-                {
-                    findmember = member;
-                    return findmember;
-                }
-            }
-            await Task.Delay(1000);
-            navigationManager.NavigateTo("/");
-            return findmember;
-        }
+            string sql = $"SELECT * FROM MEMBER WHERE ID = '{id}'";
+            DataTable dt = SQLServer.SQLServerSelect(sql);
 
-        public async Task<List<Member>> GetMembersAsync()
-        {
-            await Task.Delay(1000);
-            return Members;
-        }
+            Member member = new Member();
+            member.Id = dt.Rows[0]["Id"].ToString();
+            member.Pw = dt.Rows[0]["Pw"].ToString();
+            member.Email = dt.Rows[0]["Email"].ToString();
 
-        public async Task UpdateMemberAsync(string id, Member model)
-        {
-            foreach (var member in Members)
-            {
-                if (member.Id.Equals(id))
-                {
-                    member.Id = model.Id;
-                    member.Pw = model.Pw;
-                    member.Email = model.Email;
-                }
-            }
-            await Task.Delay(1000);
-            navigationManager.NavigateTo("/");
+            return member;
         }
     }
 }
