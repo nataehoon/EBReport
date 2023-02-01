@@ -28,7 +28,7 @@
                             <Template Context="Load">
                                 <div class="crudbtn">
                                     <span class="upbtn"><TelerikButton Class="crudbtn" ThemeColor="@ThemeConstants.Button.ThemeColor.Primary" OnClick="@(() => UpdateData(Load))">+</TelerikButton></span>
-                                    <span class="delbtn"><TelerikButton Class="crudbtn" ThemeColor="@ThemeConstants.Button.ThemeColor.Primary" OnClick="@(() => DeleteData(Load))">x</TelerikButton></span>
+                                    <span class="delbtn"><TelerikButton Class="crudbtn" ThemeColor="@ThemeConstants.Button.ThemeColor.Primary" OnClick="@(() => {dialog = true; deleteno = Load.Dailyno;})">x</TelerikButton></span>
                                 </div>
                                 <div class="data">
                                     <div class="data-progress">
@@ -62,9 +62,9 @@
                 </DetailTemplate>
 
                 <GridColumns>
-                    <GridColumn Field="Title" Title="제목" Width="50%" />
-                    <GridColumn Field="Writer" Title="작성자" Width="25%"/>
-                    <GridColumn Field="Important" Title="중요도" Width="25%" />
+                    <GridColumn Field="Title" Title="제목" Width="45%" />
+                    <GridColumn Field="Writer" Title="작성자" Width="28%"/>
+                    <GridColumn Field="Important" Title="중요도" Width="27%" />
                 </GridColumns>
             </TelerikGrid>
         </div>
@@ -122,22 +122,46 @@
     </WindowContent>
 </TelerikWindow>
 
+<TelerikDialog @bind-Visible="@dialog" Width="320px" Title="Warning">
+    <DialogContent>
+        <p class="dialogText">정말로 삭제하시겠 습니까?</p>
+    </DialogContent>
+    <DialogButtons>
+        <TelerikButton ThemeColor="@ThemeConstants.Button.ThemeColor.Primary" OnClick="@(() => {DeleteData();})">예</TelerikButton>
+        <TelerikButton OnClick="@(() => {dialog = false;})">아니오</TelerikButton>
+    </DialogButtons>
+</TelerikDialog>
+
 @code {
     [Parameter]
     public string category { get; set; } = null!;
 
-    public bool WindowVisible { get; set; }
-    public string btnText = string.Empty;
+    public bool WindowVisible { get; set; } = false;
+    public bool dialog { get; set; } = false;
     private bool Loaded = false;
+
+    private int deleteno = 0;
+    private string btnText = string.Empty;
     private string[] menus = { "진행", "운영", "이슈" };
     private string writer = string.Empty;
 
     private List<Daily> Dailys { get; set; }
     private Daily daily = new Daily();
+    private Member? Loginfo { get; set; }
 
     protected override async Task OnInitializedAsync()
     {
-        writer = (await sessionStorage.GetItemAsync<Member>("loginfo")).Name;
+        Loginfo = await sessionStorage.GetItemAsync<Member>("loginfo");
+
+        if (Loginfo == null)
+        {
+            navigationManager.NavigateTo("/");
+        }
+        else
+        {
+            writer = Loginfo.Name;
+        }
+
 
         LoadData();
 
@@ -195,10 +219,10 @@
         WindowVisible = true;
     }
 
-    private void DeleteData(Daily Load)
+    private void DeleteData()
     {
         Console.WriteLine("삭제");
-        DailyService.DailyDelete(Load.Dailyno);
+        DailyService.DailyDelete(deleteno);
         Console.WriteLine("성공");
         navigationManager.NavigateTo("/report/" + category, forceLoad: true);
     }

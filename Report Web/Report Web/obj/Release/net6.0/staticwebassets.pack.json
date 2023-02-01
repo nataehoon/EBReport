@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\Report Web.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\EBSoft\\Desktop\\WorkSpace\\Cs\\Report Web\\Report Web\\wwwroot\\Image\\Login.jpg",
+      "PackagePath": "staticwebassets\\Image\\Login.jpg"
+    },
+    {
       "Id": "C:\\Users\\EBSoft\\Desktop\\WorkSpace\\Cs\\Report Web\\Report Web\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css"
     },

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "j1Qn3I6i+Qd0bNjW1upWVBDS/n1WshJ14kNe0W2FMJI=",
+  "Hash": "mTujIDkM5WS/2V1ggKlQyg4/lceaiLT7/7lb3N5ync8=",
   "Source": "Report Web",
   "BasePath": "_content/Report Web",
   "Mode": "Default",
@@ -389,6 +389,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\EBSoft\\Desktop\\WorkSpace\\Cs\\Report Web\\Report Web\\wwwroot\\Image\\Login.jpg",
+      "SourceId": "Report Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\EBSoft\\Desktop\\WorkSpace\\Cs\\Report Web\\Report Web\\wwwroot\\",
+      "BasePath": "_content/Report Web",
+      "RelativePath": "Image/Login.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Image\\Login.jpg"
     }
   ]
 }

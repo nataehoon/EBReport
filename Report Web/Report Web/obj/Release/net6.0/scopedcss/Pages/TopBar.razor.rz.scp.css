@@ -6,7 +6,7 @@
     float: left;
 }
 
-@media (max-width: 640.98px) {
+@media (max-width: 800px) {
     .title:not(.auth)[b-oyocz6ny4v] {
         display: none;
     }
@@ -28,9 +28,21 @@
     color: white;
 }
 
-@media (max-width: 640.98px) {
+@media (max-width: 800px) {
     .shortcut[b-oyocz6ny4v] {
-        margin-top:5%;
+        margin-top: 5%;
     }
-    
+}
+
+.id[b-oyocz6ny4v] {
+    width: 100%;
+}
+
+.pw[b-oyocz6ny4v] {
+    width: 100%;
+    margin-top: 11%;
+}
+
+.btn[b-oyocz6ny4v] {
+    margin-left: 55%;
 }

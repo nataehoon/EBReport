@@ -40,5 +40,11 @@ namespace Report_Web.Data
 
             return member;
         }
+
+        public static void MemberUpdate(string id, Member model)
+        {
+            string sql = $"UPDATE MEMBER SET Id='{model.Id}', Pw='{model.Pw}', Email='{model.Email}', Position='{model.Position}', Name='{model.Name}' WHERE Id='{id}'";
+            SQLServer.SQLServerUpdate(sql);
+        }
     }
 }

@@ -8,26 +8,68 @@
     </span>
 </span>
 
+<TelerikWindow Class="demo-window" Top="5%" Left="80%" Width="18%" Height="24%" Centered="true" @bind-Visible=@WindowVisible Modal="true">
+    <WindowTitle>
+        <strong>Change Password</strong>
+    </WindowTitle>
+    <WindowActions>
+        <WindowAction Name="Close" />
+    </WindowActions>
+    <WindowContent>
+        <TelerikForm Model="@memberinfo" OnSubmit="HandleValidSubmit" Width="100%">
+            <FormItems>
+                <div class="id">
+                    <FormItem Class="loginput" Field="@nameof(memberinfo.Pw)">
+                        <Template>
+                            <label for="Pw" class="">현재 비밀번호</label>
+                            <TelerikTextBox Id="Pw" @bind-Value="@memberinfo.Pw" Password="true"></TelerikTextBox>
+                            <TelerikValidationMessage For="@(() => memberinfo.Pw)"></TelerikValidationMessage>
+                        </Template>
+                    </FormItem>
+                </div>
+                <div class="pw">
+                    <FormItem Class="loginput" Field="@nameof(memberinfo.Pw)">
+                        <Template>
+                            <label for="Pw" class="">변경 비밀번호</label>
+                            <TelerikTextBox Id="Pw" @bind-Value="@changpw" Password="true"></TelerikTextBox>
+                            <TelerikValidationMessage For="@(() => memberinfo.Pw)"></TelerikValidationMessage>
+                        </Template>
+                    </FormItem>
+                </div>
+            </FormItems>
+            <FormButtons>
+                <div class="btn">
+                    <TelerikButton ButtonType="ButtonType.Submit" ThemeColor="@ThemeConstants.Button.ThemeColor.Primary">변경</TelerikButton>
+                    <TelerikButton OnClick="@(() => WindowVisible = false)">취소</TelerikButton>
+                </div>
+            </FormButtons>
+        </TelerikForm>
+    </WindowContent>
+</TelerikWindow>
+
 @code {
     private List<MenuItem> userinfo { get; set; }
     private List<MenuItem> MenuItems { get; set; }
+    private Member memberinfo = new Member();
+    private string changpw = string.Empty;
     private string user = "사용자";
+    private bool WindowVisible = false;
 
     protected override void OnInitialized()
     {
         MenuItems = new List<MenuItem>()
         {
-            
+
             new MenuItem()
             {
                 Icon = "home",
                 subt = "home"
             },
-            new MenuItem()
-            {
-                Icon = "gear",
-                subt = "setting",
-            }
+            //new MenuItem()
+            //{
+            //    Icon = "gear",
+            //    subt = "setting",
+            //}
             // new MenuItem()
             //{
             //    Icon = "star"
@@ -72,7 +114,7 @@
         //클릭한 아이템 if 처리하여 navigation 코딩
         if (item.subt.Equals("setting"))
         {
-            
+
         }
         if (item.subt.Equals("home"))
         {
@@ -88,12 +130,27 @@
         //}
         if (item.subt.Equals("정보 수정"))
         {
-
+            WindowVisible = true;
         }
         if (item.subt.Equals("로그 아웃"))
         {
             sessionStorage.ClearAsync();
             navigationManager.NavigateTo("/");
+        }
+    }
+
+    private async void HandleValidSubmit()
+    {
+        Console.WriteLine("비밀번호 변경");
+        string userid = (await sessionStorage.GetItemAsync<Member>("loginfo")).Id;
+        var result = MemberService.MemberByIdSelect(userid);
+        if(result != null && result.Pw == memberinfo.Pw)
+        {
+            result.Pw = changpw;
+            await Task.Delay(1000);
+            MemberService.MemberUpdate(userid, result);
+            Console.WriteLine("성공");
+            navigationManager.NavigateTo("/main", forceLoad:true);
         }
     }
 }

@@ -29,7 +29,7 @@
         {
             string Startperiod = model.Startperiod.ToString("yyyy/MM/dd");
             string Endperiod = model.Endperiod.ToString("yyyy/MM/dd");
-            string sql = $"INSERT INTO PROJECTMANAGE(Title, Managers, Startperiod, Endperiod, Totalperiod, Progress, Type) VALUES('{model.Title}','{model.Manager}', '{Startperiod}', '{Endperiod}', 0, 0, '{model.Type})";
+            string sql = $"INSERT INTO PROJECTMANAGE(Title, Managers, Startperiod, Endperiod, Totalperiod, Progress, Type) VALUES('{model.Title}','{model.Manager}', '{Startperiod}', '{Endperiod}', 0, 0, '{model.Type}')";
             SQLServer.SQLServerSelect(sql);
         }
 

@@ -34,7 +34,7 @@
                                             {
                                                 <TelerikButton Class="statebtn end"><p class="btntext">종료</p></TelerikButton>
                                             }
-                                            else if (ProjectInfo.Progress <= 0)
+                                            else if (ProjectInfo.Progress < 0)
                                             {
                                                 <TelerikButton Class="statebtn pre"><p class="btntext">준비</p></TelerikButton>
                                             }
@@ -53,7 +53,7 @@
                                             @if (Loginfo.Position.Equals("최고관리자") || Loginfo.Position.Equals("관리자"))
                                             {
                                                 <TelerikButton Class="crudbtn" ThemeColor="@ThemeConstants.Button.ThemeColor.Primary" OnClick="@(() => UpdateData(ProjectInfo))">+</TelerikButton>
-                                                <TelerikButton Class="crudbtn" ThemeColor="@ThemeConstants.Button.ThemeColor.Primary" OnClick="@(() => DeleteData(ProjectInfo.Projectno))">x</TelerikButton>
+                                            <TelerikButton Class="crudbtn" ThemeColor="@ThemeConstants.Button.ThemeColor.Primary" OnClick="@(() => {dialog = true; deleteno = ProjectInfo.Projectno;})">x</TelerikButton>
                                             }
                                             
                                         </span>
@@ -103,18 +103,35 @@
     </WindowContent>
 </TelerikWindow>
 
+<TelerikDialog @bind-Visible="@dialog" Width="320px" Title="Warning">
+    <DialogContent>
+        <p class="dialogText">정말로 삭제하시겠 습니까?</p>
+    </DialogContent>
+    <DialogButtons>
+        <TelerikButton ThemeColor="@ThemeConstants.Button.ThemeColor.Primary" OnClick="@(() => {DeleteData();})">예</TelerikButton>
+        <TelerikButton OnClick="@(() => {dialog = false;})">아니오</TelerikButton>
+    </DialogButtons>
+</TelerikDialog>
+
 @code {
     private List<ProjectManage> ProjectManages { get; set; } = null!;
     private ProjectManage projectManage = new ProjectManage();
     private Member Loginfo { get; set; } = null!;
     private string btnText = string.Empty;
+    private int deleteno = 0;
 
     private bool Loaded = false;
-    public bool WindowVisible { get; set; }
+    public bool WindowVisible { get; set; } = false;
+    public bool dialog { get; set; } = false;
 
     protected override async Task OnInitializedAsync()
     {
         Loginfo = await sessionStorage.GetItemAsync<Member>("loginfo");
+
+        if(Loginfo == null)
+        {
+            navigationManager.NavigateTo("/");
+        }
 
         LoadData();
 
@@ -194,12 +211,12 @@
         WindowVisible = true;
     }
 
-    private void DeleteData(int no)
+    private void DeleteData()
     {
         Console.WriteLine("삭제");
         try
         {
-            ProjectmanageService.ProjectManageDelete(no);
+            ProjectmanageService.ProjectManageDelete(deleteno);
             Console.WriteLine("성공");
             navigationManager.NavigateTo("/main", forceLoad: true);
         }

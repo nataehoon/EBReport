@@ -21,4 +21,8 @@
     <PackageReference Include="Telerik.UI.for.Blazor" Version="3.7.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\Image\" />
+  </ItemGroup>
+
 </Project>
