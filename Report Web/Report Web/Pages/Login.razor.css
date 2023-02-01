@@ -10,8 +10,8 @@
 @media only screen and (max-width:800px){
     .LoginBox{
         top: 15%;
-        left: 0;
-        width: 100%;
+        left: 5%;
+        width: 90%;
         height: 80%;
     }
 }

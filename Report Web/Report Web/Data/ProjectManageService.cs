@@ -1,13 +1,10 @@
-﻿using Report_Web.Model;
-using System.Data;
-
-namespace Report_Web.Data
+﻿namespace Report_Web.Data
 {
     public class ProjectmanageService
     {
         public static List<ProjectManage> ProjectManageAllSelect()
         {
-            string sql = $"SELECT * FROM PROJECTMANAGE";
+            string sql = $"SELECT * FROM PROJECTMANAGE ORDER BY Projectno DESC";
             DataTable dt = SQLServer.SQLServerSelect(sql);
 
             List<ProjectManage> projectlist = new List<ProjectManage>();
@@ -20,6 +17,7 @@ namespace Report_Web.Data
                 project.Manager = dt.Rows[i]["Managers"].ToString();
                 project.Startperiod = (DateTime)dt.Rows[i]["Startperiod"];
                 project.Endperiod = (DateTime)dt.Rows[i]["Endperiod"];
+                project.Type= dt.Rows[i]["Type"].ToString();
 
                 projectlist.Add(project);
             }
@@ -31,7 +29,7 @@ namespace Report_Web.Data
         {
             string Startperiod = model.Startperiod.ToString("yyyy/MM/dd");
             string Endperiod = model.Endperiod.ToString("yyyy/MM/dd");
-            string sql = $"INSERT INTO PROJECTMANAGE(Title, Managers, Startperiod, Endperiod, Totalperiod, Progress) VALUES('{model.Title}','{model.Manager}', '{Startperiod}', '{Endperiod}', 0, 0)";
+            string sql = $"INSERT INTO PROJECTMANAGE(Title, Managers, Startperiod, Endperiod, Totalperiod, Progress, Type) VALUES('{model.Title}','{model.Manager}', '{Startperiod}', '{Endperiod}', 0, 0, '{model.Type})";
             SQLServer.SQLServerSelect(sql);
         }
 
@@ -39,13 +37,12 @@ namespace Report_Web.Data
         {
             string Startperiod = model.Startperiod.ToString("yyyy/MM/dd");
             string Endperiod = model.Endperiod.ToString("yyyy/MM/dd");
-            string sql = $"UPDATE PROJECTMANAGE SET Title='{model.Title}', Managers='{model.Manager}', Startperiod='{Startperiod}', Endperiod='{Endperiod}', Totalperiod='{model.Totalperiod}', Progress='{model.Progress}' WHERE Projectno = '{no}'";
+            string sql = $"UPDATE PROJECTMANAGE SET Title='{model.Title}', Managers='{model.Manager}', Startperiod='{Startperiod}', Endperiod='{Endperiod}', Totalperiod='{model.Totalperiod}', Progress='{model.Progress}', Type='{model.Type}' WHERE Projectno = '{no}'";
             SQLServer.SQLServerUpdate(sql);
         }
 
         public static void ProjectManageDelete(int no)
         {
-            Console.WriteLine(no);
             string sql = $"DELETE FROM PROJECTMANAGE WHERE Projectno = '{no}'";
             SQLServer.SQLServerDelete(sql);
         }

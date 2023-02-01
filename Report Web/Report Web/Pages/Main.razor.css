@@ -61,20 +61,26 @@
     height: 35%;
 }
 
+@media only screen and (max-width:800px) {
+    .box-content1 {
+        height: 32%;
+    }
+}
+
 .cont-title {
     font: 20px bolder;
 }
 
 .box-content2 {
-    height:30px;
+    height: 30px;
 }
 
 .cont-period {
-    float:left;
+    float: left;
 }
 
-.cont-btn{
-    float:right;
+.cont-btn {
+    float: right;
 }
 
 .progress {
@@ -90,8 +96,7 @@
     margin-top: 2%;
 }
 
-.modal{
-    width:50%;
-
+.modal {
+    width: 50%;
 }
 

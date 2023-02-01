@@ -1,0 +1,18 @@
+.header[b-p4xwz9ieor] {
+    margin-top: 4%;
+}
+
+.title[b-p4xwz9ieor] {
+    font: 40px bolder;
+}
+
+.formbtn[b-p4xwz9ieor] {
+    display: flex;
+    justify-content: end;
+}
+
+.btntext[b-p4xwz9ieor] {
+    margin-top: 17px;
+    color: white;
+    font-size: 15px;
+}

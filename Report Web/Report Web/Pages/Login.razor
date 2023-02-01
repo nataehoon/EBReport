@@ -1,5 +1,6 @@
 ﻿
-
+@if (Loaded)
+{
 <div class="container">
     <div class="LoginBox">
         <div class="LoginImg">
@@ -13,6 +14,11 @@
                     </div>
                     <div class="pw">
                         <FormItem Class="loginput" Field="@nameof(Loginfo.Pw)">
+                            <Template>
+                                <label for="Pw" class="">비밀번호</label>
+                                <TelerikTextBox Id="Pw" @bind-Value="@Loginfo.Pw" Password="true"></TelerikTextBox>
+                                <TelerikValidationMessage For="@(() => Loginfo.Pw)"></TelerikValidationMessage>
+                            </Template>
                         </FormItem>
                     </div>
                 </FormItems>
@@ -23,12 +29,13 @@
                 </FormButtons>
             </TelerikForm>
         </div>
-        <div class="Loginbtn">
+        @*<div class="Loginbtn">
             <span class="Forgot"><a href="">아이디/비밀번호 찾기</a></span>
             <span class="Joinus"><a href="">회원가입</a></span>
-        </div>
+        </div>*@
     </div>
 </div>
+}
 
 
 
@@ -43,13 +50,19 @@
     {
         LoadData();
 
-        await Task.Delay(1000);
+        var sessionchk = await sessionStorage.GetItemAsync<Member>("loginfo");
+        if (sessionchk != null)
+        {
+            navigationManager.NavigateTo("/main");
+        }
 
         Loaded = true;
     }
 
     public void LoadData()
     {
+        
+        
     }
 
     async void LoginCheck()

@@ -1,0 +1,125 @@
+.header[b-v88z584x9h] {
+    margin-top: 4%;
+}
+
+.title[b-v88z584x9h]{
+    font:40px bolder;
+}
+
+.formbtn[b-v88z584x9h] {
+    display:flex;
+    justify-content:end;
+}
+
+.btntext[b-v88z584x9h] {
+    margin-top: 17px;
+    color: white;
+    font-size: 15px;
+}
+
+.reportform[b-v88z584x9h]{
+    margin-top:2%;
+    margin-bottom:5%;
+}
+
+.crudbtn[b-v88z584x9h]{
+    display:flex;
+    justify-content:flex-end;
+}
+
+.upbtn[b-v88z584x9h]{
+    margin-right:3px;
+}
+
+.data[b-v88z584x9h]{
+    width:97%;
+    margin-left:1%;
+    margin-right:1%;
+}
+
+.data-progress[b-v88z584x9h] {
+    width: 100%;
+    border-right: 5px #d5e1df inset;
+    border-bottom: 5px #d5e1df inset;
+    height: 100%;
+    border-radius: 8px;
+}
+
+@media only screen and (max-width:800px){
+    .data-progress[b-v88z584x9h] {
+        width: 100%;
+        height: 100%;
+        border-radius: 8px;
+        margin-right: 0;
+        margin-bottom: 2%;
+    }
+}
+
+.data-operation[b-v88z584x9h] {
+    width: 100%;
+    border-right: 5px #d5e1df inset;
+    border-bottom: 5px #d5e1df inset;
+    height: 100%;
+    border-radius: 8px;
+}
+
+@media only screen and (max-width:800px) {
+    .data-operation[b-v88z584x9h] {
+        width: 100%;
+        height: 100%;
+        border-radius: 8px;
+    }
+}
+
+.data-issues[b-v88z584x9h] {
+    width: 100%;
+    border-right: 5px #d5e1df inset;
+    border-bottom: 5px #d5e1df inset;
+    height: 100%;
+    border-radius: 8px;
+}
+
+@media only screen and (max-width:800px) {
+    .data-issues[b-v88z584x9h] {
+        width: 100%;
+        height: 100%;
+        border-radius: 8px;
+        margin-left: 0;
+        margin-top: 2%;
+    }
+}
+
+.data-header[b-v88z584x9h]{
+    margin-top:2%;
+    font-size: 20px;
+    font-weight:900;
+    
+}
+
+.data-content[b-v88z584x9h] {
+    border-top: 2px #e2e2e2 solid;
+    margin-top: 2%;
+    min-height: 360px;
+    height:auto;
+}
+
+@media only screen and (max-width:800px){
+    .data-content[b-v88z584x9h]{
+        min-height:auto;
+    }
+}
+
+
+.cont-text[b-v88z584x9h] {
+    width: 100%;
+    margin-top: 2%;
+    word-break: keep-all;
+}
+
+.col-1[b-v88z584x9h] {
+    width: 50%;
+}
+
+.col-2[b-v88z584x9h] {
+    width: 50%
+}

@@ -17,6 +17,8 @@ namespace Report_Web.Data
                 member.Id = dt.Rows[i]["Id"].ToString();
                 member.Pw = dt.Rows[i]["Pw"].ToString();
                 member.Email = dt.Rows[i]["Email"].ToString();
+                member.Position = dt.Rows[i]["Position"].ToString();
+                member.Name = dt.Rows[i]["Name"].ToString();
 
                 members.Add(member);
             }
@@ -33,6 +35,8 @@ namespace Report_Web.Data
             member.Id = dt.Rows[0]["Id"].ToString();
             member.Pw = dt.Rows[0]["Pw"].ToString();
             member.Email = dt.Rows[0]["Email"].ToString();
+            member.Position = dt.Rows[0]["Position"].ToString();
+            member.Name = dt.Rows[0]["Name"].ToString();
 
             return member;
         }

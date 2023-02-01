@@ -16,5 +16,7 @@
         public int Progress { get; set; }
         [Editable(false)]
         public int Totalperiod { get; set; }
+        [Display(Name = "프로젝트 타입(RPA, 성능테스트, Task Mining)")]
+        public string? Type { get; set; }
     }
 }

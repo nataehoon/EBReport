@@ -6,60 +6,72 @@
         <div class="header">
             <span class="title">Project</span>
             <span class="formbtn">
-                <TelerikButton Class="telerincbtn" ThemeColor="@ThemeConstants.Button.ThemeColor.Primary" OnClick="@(() => {WindowVisible = true; btnText = "Create";projectManage = new ProjectManage();})"><p class="btntext">생성</p></TelerikButton>
+                @if (Loginfo.Position.Equals("최고관리자") || Loginfo.Position.Equals("관리자"))
+                {
+                    <TelerikButton Class="telerincbtn" ThemeColor="@ThemeConstants.Button.ThemeColor.Primary" OnClick="@(() => {WindowVisible = true; btnText = "Create";projectManage = new ProjectManage();})"><p class="btntext">생성</p></TelerikButton>
+                }
             </span>
         </div>
         <div class="row">
             @foreach(var ProjectInfo in ProjectManages){
-                <div class="box">
-                    <TelerikGridLayout>
-                        <GridLayoutColumns>
-                            <GridLayoutColumn Width="100%"></GridLayoutColumn>
-                        </GridLayoutColumns>
-                        <GridLayoutRows>
-                            <GridLayoutRow Height="200px"></GridLayoutRow>
-                        </GridLayoutRows>
-                        <GridLayoutItems>
-                            <GridLayoutItem>
-                                <div class="box-header" @onclick=@(() => navigationManager.NavigateTo("/report/" + ProjectInfo.Title))>
-                                    <span class="header-title" >@ProjectInfo.Title</span>
-                                    <span class="header-state" >
-                                        @*진행 상태에 따른 버튼 색/텍스트 삽입*@
-                                        @if (ProjectInfo.Progress >= 100)
-                                        {
-                                            <TelerikButton Class="statebtn end"><p class="btntext">종료</p></TelerikButton>
-                                        }else if(ProjectInfo.Progress <= 0)
-                                        {
-                                            <TelerikButton Class="statebtn pre"><p class="btntext">준비</p></TelerikButton>
-                                        }else
-                                        {
-                                            <TelerikButton Class="statebtn pro"><p class="btntext">진행</p></TelerikButton>
-                                        }
-                                    </span>
-                                </div>
-                                <div class="box-content1" @onclick=@(() => navigationManager.NavigateTo("/report/" + ProjectInfo.Title))>
-                                    <div class="cont-title">@ProjectInfo.Title 프로젝트</div>
-                                </div>
-                                <div class="box-content2">
-                                    <span class="cont-period">@ProjectInfo.Startperiod.ToShortDateString() ~ @ProjectInfo.Endperiod.ToShortDateString()</span>
-                                    <span class="cont-btn">
-                                        <TelerikButton Class="crudbtn" ThemeColor="@ThemeConstants.Button.ThemeColor.Primary" OnClick="@(() => UpdateData(ProjectInfo))">+</TelerikButton>
-                                        <TelerikButton Class="crudbtn" ThemeColor="@ThemeConstants.Button.ThemeColor.Primary" OnClick="@(() => DeleteData(ProjectInfo.Projectno))">x</TelerikButton>
-                                    </span>
-                                </div>
-                                <div class="progress">
-                                    <TelerikProgressBar  Class="progressbar" Max="100" Value="@ProjectInfo.Progress"/>
-                                </div>
-                                <div class="box-foot">
-                                    <div class="foot-content">
-                                        <span style="float:left">담당자</span>
-                                        <span style="float:right">@ProjectInfo.Manager</span>
+                @if (Loginfo != null && (Loginfo.Position.Equals("최고관리자") || Loginfo.Position.Equals("관리자") || ProjectInfo.Manager.Contains(Loginfo.Name)))
+                {
+                    <div class="box">
+                        <TelerikGridLayout>
+                            <GridLayoutColumns>
+                                <GridLayoutColumn Width="100%"></GridLayoutColumn>
+                            </GridLayoutColumns>
+                            <GridLayoutRows>
+                                <GridLayoutRow Height="200px"></GridLayoutRow>
+                            </GridLayoutRows>
+                            <GridLayoutItems>
+                                <GridLayoutItem>
+                                    <div class="box-header" @onclick=@(() => navigationManager.NavigateTo("/report/" + ProjectInfo.Title))>
+                                        <span class="header-title">@ProjectInfo.Title</span>
+                                        <span class="header-state">
+                                            @*진행 상태에 따른 버튼 색/텍스트 삽입*@
+                                            @if (ProjectInfo.Progress >= 100)
+                                            {
+                                                <TelerikButton Class="statebtn end"><p class="btntext">종료</p></TelerikButton>
+                                            }
+                                            else if (ProjectInfo.Progress <= 0)
+                                            {
+                                                <TelerikButton Class="statebtn pre"><p class="btntext">준비</p></TelerikButton>
+                                            }
+                                            else
+                                            {
+                                                <TelerikButton Class="statebtn pro"><p class="btntext">진행</p></TelerikButton>
+                                            }
+                                        </span>
                                     </div>
-                                </div>
-                            </GridLayoutItem>
-                        </GridLayoutItems>
-                    </TelerikGridLayout>
-                </div>
+                                    <div class="box-content1" @onclick=@(() => navigationManager.NavigateTo("/report/" + ProjectInfo.Title))>
+                                        <div class="cont-title">@ProjectInfo.Type</div>
+                                    </div>
+                                    <div class="box-content2">
+                                        <span class="cont-period">@ProjectInfo.Startperiod.ToShortDateString() ~ @ProjectInfo.Endperiod.ToShortDateString()</span>
+                                        <span class="cont-btn">
+                                            @if (Loginfo.Position.Equals("최고관리자") || Loginfo.Position.Equals("관리자"))
+                                            {
+                                                <TelerikButton Class="crudbtn" ThemeColor="@ThemeConstants.Button.ThemeColor.Primary" OnClick="@(() => UpdateData(ProjectInfo))">+</TelerikButton>
+                                                <TelerikButton Class="crudbtn" ThemeColor="@ThemeConstants.Button.ThemeColor.Primary" OnClick="@(() => DeleteData(ProjectInfo.Projectno))">x</TelerikButton>
+                                            }
+                                            
+                                        </span>
+                                    </div>
+                                    <div class="progress">
+                                        <TelerikProgressBar Class="progressbar" Max="100" Value="@ProjectInfo.Progress" />
+                                    </div>
+                                    <div class="box-foot">
+                                        <div class="foot-content">
+                                            <span style="float:left">담당자</span>
+                                            <span style="float:right">@ProjectInfo.Manager</span>
+                                        </div>
+                                    </div>
+                                </GridLayoutItem>
+                            </GridLayoutItems>
+                        </TelerikGridLayout>
+                    </div>
+                }
             }
         </div>
     </div>    
@@ -78,8 +90,9 @@
                 <DataAnnotationsValidator />
             </FormValidation>
             <FormItems>
-                <FormItem Field="@nameof(projectManage.Title)" EditorType="@FormEditorType.TextArea"></FormItem>
-                <FormItem Field="@nameof(projectManage.Manager)" EditorType="@FormEditorType.TextArea"></FormItem>
+                <FormItem Field="@nameof(projectManage.Title)"></FormItem>
+                <FormItem Field="@nameof(projectManage.Type)"></FormItem>
+                <FormItem Field="@nameof(projectManage.Manager)"></FormItem>
                 <FormItem Field="@nameof(projectManage.Startperiod)"></FormItem>
                 <FormItem Field="@nameof(projectManage.Endperiod)"></FormItem>
             </FormItems>
@@ -91,16 +104,21 @@
 </TelerikWindow>
 
 @code {
-    private List<ProjectManage> ProjectManages { get; set; }
+    private List<ProjectManage> ProjectManages { get; set; } = null!;
     private ProjectManage projectManage = new ProjectManage();
+    private Member Loginfo { get; set; } = null!;
     private string btnText = string.Empty;
 
     private bool Loaded = false;
     public bool WindowVisible { get; set; }
 
-    protected override void OnInitialized()
+    protected override async Task OnInitializedAsync()
     {
+        Loginfo = await sessionStorage.GetItemAsync<Member>("loginfo");
+
         LoadData();
+
+        await Task.Delay(1000);
 
         Loaded = true;
     }
@@ -131,8 +149,6 @@
             {
                 item.Progress = 100;
             }
-
-
         }
     }
 

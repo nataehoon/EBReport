@@ -1,0 +1,56 @@
+C:\Users\EBSoft\Desktop\WorkSpace\Cs\Report Web\Report Web\obj\Release\net6.0\PubTmp\Out\Report Web.exe
+C:\Users\EBSoft\Desktop\WorkSpace\Cs\Report Web\Report Web\obj\Release\net6.0\PubTmp\Out\appsettings.Development.json
+C:\Users\EBSoft\Desktop\WorkSpace\Cs\Report Web\Report Web\obj\Release\net6.0\PubTmp\Out\appsettings.json
+C:\Users\EBSoft\Desktop\WorkSpace\Cs\Report Web\Report Web\obj\Release\net6.0\PubTmp\Out\Report Web.dll
+C:\Users\EBSoft\Desktop\WorkSpace\Cs\Report Web\Report Web\obj\Release\net6.0\PubTmp\Out\Report Web.deps.json
+C:\Users\EBSoft\Desktop\WorkSpace\Cs\Report Web\Report Web\obj\Release\net6.0\PubTmp\Out\Report Web.runtimeconfig.json
+C:\Users\EBSoft\Desktop\WorkSpace\Cs\Report Web\Report Web\obj\Release\net6.0\PubTmp\Out\Report Web.pdb
+C:\Users\EBSoft\Desktop\WorkSpace\Cs\Report Web\Report Web\obj\Release\net6.0\PubTmp\Out\Azure.Core.dll
+C:\Users\EBSoft\Desktop\WorkSpace\Cs\Report Web\Report Web\obj\Release\net6.0\PubTmp\Out\Azure.Identity.dll
+C:\Users\EBSoft\Desktop\WorkSpace\Cs\Report Web\Report Web\obj\Release\net6.0\PubTmp\Out\Blazored.SessionStorage.dll
+C:\Users\EBSoft\Desktop\WorkSpace\Cs\Report Web\Report Web\obj\Release\net6.0\PubTmp\Out\Microsoft.AspNetCore.Authorization.dll
+C:\Users\EBSoft\Desktop\WorkSpace\Cs\Report Web\Report Web\obj\Release\net6.0\PubTmp\Out\Microsoft.AspNetCore.Components.dll
+C:\Users\EBSoft\Desktop\WorkSpace\Cs\Report Web\Report Web\obj\Release\net6.0\PubTmp\Out\Microsoft.AspNetCore.Components.Forms.dll
+C:\Users\EBSoft\Desktop\WorkSpace\Cs\Report Web\Report Web\obj\Release\net6.0\PubTmp\Out\Microsoft.AspNetCore.Components.Web.dll
+C:\Users\EBSoft\Desktop\WorkSpace\Cs\Report Web\Report Web\obj\Release\net6.0\PubTmp\Out\Microsoft.AspNetCore.Metadata.dll
+C:\Users\EBSoft\Desktop\WorkSpace\Cs\Report Web\Report Web\obj\Release\net6.0\PubTmp\Out\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\EBSoft\Desktop\WorkSpace\Cs\Report Web\Report Web\obj\Release\net6.0\PubTmp\Out\Microsoft.Data.SqlClient.dll
+C:\Users\EBSoft\Desktop\WorkSpace\Cs\Report Web\Report Web\obj\Release\net6.0\PubTmp\Out\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\EBSoft\Desktop\WorkSpace\Cs\Report Web\Report Web\obj\Release\net6.0\PubTmp\Out\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\EBSoft\Desktop\WorkSpace\Cs\Report Web\Report Web\obj\Release\net6.0\PubTmp\Out\Microsoft.Identity.Client.dll
+C:\Users\EBSoft\Desktop\WorkSpace\Cs\Report Web\Report Web\obj\Release\net6.0\PubTmp\Out\Microsoft.Identity.Client.Extensions.Msal.dll
+C:\Users\EBSoft\Desktop\WorkSpace\Cs\Report Web\Report Web\obj\Release\net6.0\PubTmp\Out\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\EBSoft\Desktop\WorkSpace\Cs\Report Web\Report Web\obj\Release\net6.0\PubTmp\Out\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\EBSoft\Desktop\WorkSpace\Cs\Report Web\Report Web\obj\Release\net6.0\PubTmp\Out\Microsoft.IdentityModel.Logging.dll
+C:\Users\EBSoft\Desktop\WorkSpace\Cs\Report Web\Report Web\obj\Release\net6.0\PubTmp\Out\Microsoft.IdentityModel.Protocols.dll
+C:\Users\EBSoft\Desktop\WorkSpace\Cs\Report Web\Report Web\obj\Release\net6.0\PubTmp\Out\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\EBSoft\Desktop\WorkSpace\Cs\Report Web\Report Web\obj\Release\net6.0\PubTmp\Out\Microsoft.IdentityModel.Tokens.dll
+C:\Users\EBSoft\Desktop\WorkSpace\Cs\Report Web\Report Web\obj\Release\net6.0\PubTmp\Out\Microsoft.JSInterop.dll
+C:\Users\EBSoft\Desktop\WorkSpace\Cs\Report Web\Report Web\obj\Release\net6.0\PubTmp\Out\Microsoft.SqlServer.Server.dll
+C:\Users\EBSoft\Desktop\WorkSpace\Cs\Report Web\Report Web\obj\Release\net6.0\PubTmp\Out\Microsoft.Win32.SystemEvents.dll
+C:\Users\EBSoft\Desktop\WorkSpace\Cs\Report Web\Report Web\obj\Release\net6.0\PubTmp\Out\System.Configuration.ConfigurationManager.dll
+C:\Users\EBSoft\Desktop\WorkSpace\Cs\Report Web\Report Web\obj\Release\net6.0\PubTmp\Out\System.Drawing.Common.dll
+C:\Users\EBSoft\Desktop\WorkSpace\Cs\Report Web\Report Web\obj\Release\net6.0\PubTmp\Out\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\EBSoft\Desktop\WorkSpace\Cs\Report Web\Report Web\obj\Release\net6.0\PubTmp\Out\System.IO.Pipelines.dll
+C:\Users\EBSoft\Desktop\WorkSpace\Cs\Report Web\Report Web\obj\Release\net6.0\PubTmp\Out\System.Memory.Data.dll
+C:\Users\EBSoft\Desktop\WorkSpace\Cs\Report Web\Report Web\obj\Release\net6.0\PubTmp\Out\System.Runtime.Caching.dll
+C:\Users\EBSoft\Desktop\WorkSpace\Cs\Report Web\Report Web\obj\Release\net6.0\PubTmp\Out\System.Security.Cryptography.ProtectedData.dll
+C:\Users\EBSoft\Desktop\WorkSpace\Cs\Report Web\Report Web\obj\Release\net6.0\PubTmp\Out\System.Security.Permissions.dll
+C:\Users\EBSoft\Desktop\WorkSpace\Cs\Report Web\Report Web\obj\Release\net6.0\PubTmp\Out\System.Windows.Extensions.dll
+C:\Users\EBSoft\Desktop\WorkSpace\Cs\Report Web\Report Web\obj\Release\net6.0\PubTmp\Out\Telerik.DataSource.dll
+C:\Users\EBSoft\Desktop\WorkSpace\Cs\Report Web\Report Web\obj\Release\net6.0\PubTmp\Out\Telerik.Documents.SpreadsheetStreaming.dll
+C:\Users\EBSoft\Desktop\WorkSpace\Cs\Report Web\Report Web\obj\Release\net6.0\PubTmp\Out\Telerik.Recurrence.dll
+C:\Users\EBSoft\Desktop\WorkSpace\Cs\Report Web\Report Web\obj\Release\net6.0\PubTmp\Out\Telerik.Blazor.dll
+C:\Users\EBSoft\Desktop\WorkSpace\Cs\Report Web\Report Web\obj\Release\net6.0\PubTmp\Out\Telerik.Zip.dll
+C:\Users\EBSoft\Desktop\WorkSpace\Cs\Report Web\Report Web\obj\Release\net6.0\PubTmp\Out\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\EBSoft\Desktop\WorkSpace\Cs\Report Web\Report Web\obj\Release\net6.0\PubTmp\Out\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\EBSoft\Desktop\WorkSpace\Cs\Report Web\Report Web\obj\Release\net6.0\PubTmp\Out\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\EBSoft\Desktop\WorkSpace\Cs\Report Web\Report Web\obj\Release\net6.0\PubTmp\Out\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\EBSoft\Desktop\WorkSpace\Cs\Report Web\Report Web\obj\Release\net6.0\PubTmp\Out\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\EBSoft\Desktop\WorkSpace\Cs\Report Web\Report Web\obj\Release\net6.0\PubTmp\Out\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\EBSoft\Desktop\WorkSpace\Cs\Report Web\Report Web\obj\Release\net6.0\PubTmp\Out\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\EBSoft\Desktop\WorkSpace\Cs\Report Web\Report Web\obj\Release\net6.0\PubTmp\Out\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+C:\Users\EBSoft\Desktop\WorkSpace\Cs\Report Web\Report Web\obj\Release\net6.0\PubTmp\Out\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+C:\Users\EBSoft\Desktop\WorkSpace\Cs\Report Web\Report Web\obj\Release\net6.0\PubTmp\Out\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+C:\Users\EBSoft\Desktop\WorkSpace\Cs\Report Web\Report Web\obj\Release\net6.0\PubTmp\Out\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\EBSoft\Desktop\WorkSpace\Cs\Report Web\Report Web\obj\Release\net6.0\PubTmp\Out\runtimes\win\lib\net6.0\System.Windows.Extensions.dll

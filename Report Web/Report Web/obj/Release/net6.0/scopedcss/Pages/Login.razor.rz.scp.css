@@ -1,0 +1,75 @@
+.LoginBox[b-mkldcu0oh0]{
+    position: absolute;
+    top: 20%;
+    left: 35%;
+    width: 25%;
+    height: 60%;
+    border: 3px #d5e1df inset;
+}
+
+@media only screen and (max-width:800px){
+    .LoginBox[b-mkldcu0oh0]{
+        top: 15%;
+        left: 5%;
+        width: 90%;
+        height: 80%;
+    }
+}
+
+.LoginImg[b-mkldcu0oh0]{
+    height: 58%;
+    margin : 2% 1% 1% 1%;
+}
+
+.img[b-mkldcu0oh0] {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+
+.LoginData[b-mkldcu0oh0] {
+    height: 32%;
+    margin: 2% 1% 1% 1%;
+}
+
+.id[b-mkldcu0oh0] {
+    width: 90%;
+    height: 10%;
+    margin-left: 5%;
+}
+
+.pw[b-mkldcu0oh0] {
+    width: 90%;
+    height: 50%;
+    margin-top: 8%;
+    margin-left: 5%;
+}
+
+.Login[b-mkldcu0oh0] {
+    margin-left:82%;
+    margin-top: 4%;
+}
+
+@media only screen and (max-width:800px) {
+    .Login[b-mkldcu0oh0] {
+        margin-left: 78%;
+    }
+}
+
+.Loginbtn[b-mkldcu0oh0] {
+    display: flex;
+    justify-content: flex-end;
+    height: 5%;
+    margin: 1% 4% 1% 1%;
+}
+
+.Forgot[b-mkldcu0oh0]{
+    margin-right:3%;
+    font-size: 13px;
+}
+
+.Joinus[b-mkldcu0oh0] {
+    margin-right: 3%;
+    font-size: 13px;
+}
+

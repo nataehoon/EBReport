@@ -1,13 +1,11 @@
-﻿
-
-<span class="title">Report</span>
+﻿<span class="title">Report</span>
 <span class="shortcut">
-    <div class="navicon">
+    <span class="navicon">
         <TelerikMenu Data="@MenuItems" OnClick="@((MenuItem item) => OnClickHandler(item))" />
-    </div>
-    <div class="userinfo">
+    </span>
+    <span class="userinfo">
         <TelerikMenu Data="@userinfo" OnClick="@((MenuItem item) => OnClickHandler(item))" />
-    </div>
+    </span>
 </span>
 
 @code {
@@ -19,15 +17,17 @@
     {
         MenuItems = new List<MenuItem>()
         {
+            
             new MenuItem()
             {
                 Icon = "home",
                 subt = "home"
-            }, 
-            //new MenuItem()
-            //{
-            //    Icon = "star"
-            //},
+            },
+            new MenuItem()
+            {
+                Icon = "gear",
+                subt = "setting",
+            }
             // new MenuItem()
             //{
             //    Icon = "star"
@@ -40,22 +40,26 @@
             {
                 Text = user,
                 Icon = "user",
+                subt = "user",
                 Items = new List<MenuItem>()
                 {
-                    new MenuItem()
-                    {
-                        Text = "내 정보 보기",
-                        Icon = "info"
-                    },
+                    //new MenuItem()
+                    //{
+                    //    Text = "내 정보 보기",
+                    //    Icon = "accessibility",
+                    //    subt = "내 정보 보기"
+                    //},
                     new MenuItem()
                     {
                         Text = "정보 수정",
-                        Icon = "update"
+                        Icon = "track-changes-enable",
+                        subt = "정보 수정"
                     },
                     new MenuItem()
                     {
                         Text = "로그 아웃",
-                        Icon = "logout"
+                        Icon = "logout",
+                        subt = "로그 아웃"
                     },
                 }
             },
@@ -66,8 +70,29 @@
     protected void OnClickHandler(MenuItem item)
     {
         //클릭한 아이템 if 처리하여 navigation 코딩
+        if (item.subt.Equals("setting"))
+        {
+            
+        }
         if (item.subt.Equals("home"))
         {
+            navigationManager.NavigateTo("/");
+        }
+        if (item.subt.Equals("user"))
+        {
+
+        }
+        //if (item.subt.Equals("내 정보 보기"))
+        //{
+
+        //}
+        if (item.subt.Equals("정보 수정"))
+        {
+
+        }
+        if (item.subt.Equals("로그 아웃"))
+        {
+            sessionStorage.ClearAsync();
             navigationManager.NavigateTo("/");
         }
     }

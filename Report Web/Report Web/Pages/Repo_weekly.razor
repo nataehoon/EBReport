@@ -1,0 +1,47 @@
+﻿
+@if (Loaded)
+{
+<div class="container">
+        <div class="header">
+            <sapn class="title">
+                @category
+            </sapn>
+            <span class="formbtn">
+                <TelerikButton Class="telerincbtn" ThemeColor="@ThemeConstants.Button.ThemeColor.Primary" OnClick="@(() => {WindowVisible = true; btnText = "Create";})"><p class="btntext">생성</p></TelerikButton>
+            </span>
+        </div>
+    </div>
+}
+
+
+@code {
+    [Parameter]
+    public string category { get; set; } = null!;
+
+    private bool Loaded = false;
+    public bool WindowVisible { get; set; }
+    private string[] menus = { "진행", "운영", "이슈" };
+    public string btnText = string.Empty;
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        LoadData();
+
+        await Task.Delay(1000);
+
+        Loaded = true;
+    }
+
+    private void LoadData()
+    {
+        
+    }
+}
+
+
+<style>
+    .telerincbtn {
+        height: 35px;
+    }
+</style>

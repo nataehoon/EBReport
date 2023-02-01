@@ -1,0 +1,212 @@
+﻿@if (Loaded)
+{
+    <div class="container">
+        <div class="header">
+            <sapn class="title">
+                @category
+            </sapn>
+            <span class="formbtn">
+                <TelerikButton Class="telerincbtn" ThemeColor="@ThemeConstants.Button.ThemeColor.Primary" OnClick="@(() => {WindowVisible = true; btnText = "Create";})"><p class="btntext">생성</p></TelerikButton>
+            </span>
+        </div>
+
+        <div class="reportform">
+            <TelerikGrid Data="@Dailys" Pageable="true" Sortable="true">
+            
+                <GridToolBar>
+                    <GridCommandButton Command="ExcelExport" Icon="file-excel">Export to Excel</GridCommandButton>
+                    @*<label class="k-checkbox-label"><TelerikCheckBox @bind-Value="@ExportAllPages" />Export All Pages</label>*@
+                </GridToolBar>
+
+                <DetailTemplate Context="detailContext">
+                    @{
+                        int currentId = detailContext.Dailyno;
+
+                        var data = Dailys.Where(x => x.Dailyno == currentId);
+
+                        <TelerikListView Data="@data">
+                            <Template Context="Load">
+                                <div class="crudbtn">
+                                    <span class="upbtn"><TelerikButton Class="crudbtn" ThemeColor="@ThemeConstants.Button.ThemeColor.Primary" OnClick="@(() => UpdateData(Load))">+</TelerikButton></span>
+                                    <span class="delbtn"><TelerikButton Class="crudbtn" ThemeColor="@ThemeConstants.Button.ThemeColor.Primary" OnClick="@(() => DeleteData(Load))">x</TelerikButton></span>
+                                </div>
+                                <div class="data">
+                                    <div class="data-progress">
+                                        <div class="data-header">
+                                            @menus[0]
+                                        </div>
+                                        <div class="data-content">
+                                            <p class="cont-text">@Load.Progress</p>
+                                        </div>
+                                    </div>
+                                    <div class="data-operation">
+                                        <div class="data-header">
+                                            @menus[1]
+                                        </div>
+                                        <div class="data-content">
+                                            <p class="cont-text">@Load.Operation</p>
+                                        </div>
+                                    </div>
+                                    <div class="data-issues">
+                                        <div class="data-header">
+                                            @menus[2]
+                                        </div>
+                                        <div class="data-content">
+                                            <p class="cont-text">@Load.Issue</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </Template>
+                        </TelerikListView>
+                    }
+                </DetailTemplate>
+
+                <GridColumns>
+                    <GridColumn Field="Title" Title="제목" Width="50%" />
+                    <GridColumn Field="Writer" Title="작성자" Width="25%"/>
+                    <GridColumn Field="Important" Title="중요도" Width="25%" />
+                </GridColumns>
+            </TelerikGrid>
+        </div>
+    </div>   
+}
+<TelerikWindow Class="demo-window" Width="80%" Height="70%" Centered="true" @bind-Visible=@WindowVisible Modal="true">
+    <WindowTitle>
+        <strong>Create Project</strong>
+    </WindowTitle>
+    <WindowActions>
+        <WindowAction Name="Close" />
+    </WindowActions>
+    <WindowContent>
+        <TelerikForm Model="@daily" OnValidSubmit="HandleValidSubmit">
+            <FormValidation>
+                <DataAnnotationsValidator />
+            </FormValidation>
+            <FormItems>
+                <div class="row">
+                    <div class="col-1">
+                        <FormItem Field="@nameof(daily.Category)">
+                            <Template>
+                                <label for="category" class="">Category</label>
+                                <TelerikTextBox Id="category" @bind-Value="@category"></TelerikTextBox>
+                                <TelerikValidationMessage For="@(() => daily.Category)"></TelerikValidationMessage>
+                            </Template>
+                        </FormItem>
+                    </div>
+                    <div class="col-2">
+                        <FormItem Field="@nameof(daily.Writer)">
+                            <Template>
+                                <label for="writer" class="">작성자</label>
+                                <TelerikTextBox Id="writer" @bind-Value="@writer"></TelerikTextBox>
+                                <TelerikValidationMessage For="@(() => daily.Writer)"></TelerikValidationMessage>
+                            </Template>
+                        </FormItem>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-1">
+                        <FormItem Field="@nameof(daily.Title)"></FormItem>
+                    </div>
+                    <div class="col-2">
+                        <FormItem Field="@nameof(daily.Important)"></FormItem>
+                    </div>
+                </div>
+                <FormItem Field="@nameof(daily.Progress)" EditorType="@FormEditorType.TextArea"></FormItem>
+                <FormItem Field="@nameof(daily.Operation)" EditorType="@FormEditorType.TextArea"></FormItem>
+                <FormItem Field="@nameof(daily.Issue)" EditorType="@FormEditorType.TextArea"></FormItem>
+            </FormItems>
+            <FormButtons>
+                <TelerikButton ButtonType="ButtonType.Submit" ThemeColor="@ThemeConstants.Button.ThemeColor.Primary">@btnText</TelerikButton>
+            </FormButtons>
+        </TelerikForm>
+    </WindowContent>
+</TelerikWindow>
+
+@code {
+    [Parameter]
+    public string category { get; set; } = null!;
+
+    public bool WindowVisible { get; set; }
+    public string btnText = string.Empty;
+    private bool Loaded = false;
+    private string[] menus = { "진행", "운영", "이슈" };
+    private string writer = string.Empty;
+
+    private List<Daily> Dailys { get; set; }
+    private Daily daily = new Daily();
+
+    protected override async Task OnInitializedAsync()
+    {
+        writer = (await sessionStorage.GetItemAsync<Member>("loginfo")).Name;
+
+        LoadData();
+
+        await Task.Delay(1000);
+
+        Loaded = true;
+    }
+
+    private void LoadData()
+    {
+        Dailys = DailyService.DailyByCategorySelect(category);
+    }
+
+    async void HandleValidSubmit()
+    {
+        Console.WriteLine("서밋");
+        daily.Category = category;
+        daily.Writer = writer;
+        if (btnText.Equals("Create"))
+        {
+            Console.WriteLine("생성");
+            try
+            {
+                DailyService.DailyCreate(daily);
+                Console.WriteLine("성공");
+                navigationManager.NavigateTo("/report/" + daily.Category, forceLoad:true);
+            }
+            catch
+            {
+                Console.WriteLine("실패");
+            }
+        }
+        else
+        {
+            Console.WriteLine("수정");
+            try
+            {
+                Console.WriteLine(daily.Dailyno);
+                DailyService.DailyUpdate(daily.Dailyno, daily);
+                Console.WriteLine("성공");
+                navigationManager.NavigateTo("/report/" + daily.Category, forceLoad: true);
+            }
+            catch
+            {
+                Console.WriteLine("실패");
+            }
+        }
+        await Task.Delay(1000);
+    }
+
+    private void UpdateData(Daily Load)
+    {
+        btnText = "Update";
+        daily = Load;
+        WindowVisible = true;
+    }
+
+    private void DeleteData(Daily Load)
+    {
+        Console.WriteLine("삭제");
+        DailyService.DailyDelete(Load.Dailyno);
+        Console.WriteLine("성공");
+        navigationManager.NavigateTo("/report/" + category, forceLoad: true);
+    }
+
+}
+
+<style>
+    .telerincbtn{
+        height:35px;
+    }
+</style>

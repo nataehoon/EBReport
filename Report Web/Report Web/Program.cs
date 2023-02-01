@@ -2,6 +2,7 @@ global using System.ComponentModel.DataAnnotations;
 global using Report_Web.Model;
 global using Report_Web.Data;
 global using Report_Web.Database;
+global using System.Data;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using Blazored.SessionStorage;
