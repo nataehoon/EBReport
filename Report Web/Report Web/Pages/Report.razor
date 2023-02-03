@@ -5,7 +5,7 @@
             <Repo_Daily category="@category"></Repo_Daily>
         </TabStripTab>
         <TabStripTab Title="주간 보고서">
-            <Repo_weekly category="@category"></Repo_weekly>
+            <Repo_Weekly category="@category"></Repo_Weekly>
         </TabStripTab>
     </TelerikTabStrip>
 </div>
@@ -18,6 +18,6 @@
 
     protected override async Task OnInitializedAsync()
     {
-        
+        await Task.Delay(1000);
     }
 }

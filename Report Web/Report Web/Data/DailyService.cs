@@ -49,5 +49,26 @@ namespace Report_Web.Data
             string sql = $"DELETE FROM DAILY WHERE Dailyno = '{no}'";
             SQLServer.SQLServerDelete(sql);
         }
+
+        public static Daily DailyByNoSelect(int no)
+        {
+            string sql = $"SELECT * FROM DAILY WHERE Dailyno = '{no}'";
+            DataTable dt = SQLServer.SQLServerSelect(sql);
+
+            Daily daily = new Daily();
+
+            daily.Category = dt.Rows[0]["Category"].ToString();
+            daily.Writer = dt.Rows[0]["Writer"].ToString();
+            daily.Title = dt.Rows[0]["Title"].ToString();
+            daily.Date = (DateTime)dt.Rows[0]["Regdate"];
+            daily.Dailyno = Convert.ToInt32(dt.Rows[0]["Dailyno"]);
+            daily.Managers = dt.Rows[0]["Managers"].ToString();
+            daily.Important = Convert.ToInt32(dt.Rows[0]["Important"]);
+            daily.Progress = dt.Rows[0]["Progress"].ToString();
+            daily.Operation = dt.Rows[0]["Operation"].ToString();
+            daily.Issue = dt.Rows[0]["Issue"].ToString();
+
+            return daily;
+        }
     }
 }

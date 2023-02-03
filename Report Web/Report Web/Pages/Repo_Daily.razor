@@ -6,7 +6,7 @@
                 @category
             </sapn>
             <span class="formbtn">
-                <TelerikButton Class="telerincbtn" ThemeColor="@ThemeConstants.Button.ThemeColor.Primary" OnClick="@(() => {WindowVisible = true; btnText = "Create";})"><p class="btntext">생성</p></TelerikButton>
+                <TelerikButton Class="telerincbtn" ThemeColor="@ThemeConstants.Button.ThemeColor.Primary" OnClick="@(() => {WindowVisible = true; daily = new Daily(); btnText = "Create";})"><p class="btntext">생성</p></TelerikButton>
             </span>
         </div>
 
@@ -70,7 +70,7 @@
         </div>
     </div>   
 }
-<TelerikWindow Class="demo-window" Width="80%" Height="70%" Centered="true" @bind-Visible=@WindowVisible Modal="true">
+<TelerikWindow Class="demo-window" Width="80%" Height="80%" Centered="true" @bind-Visible=@WindowVisible Modal="true">
     <WindowTitle>
         <strong>Create Project</strong>
     </WindowTitle>
@@ -146,7 +146,7 @@
     private string writer = string.Empty;
 
     private List<Daily> Dailys { get; set; }
-    private Daily daily = new Daily();
+    private Daily daily { get; set; }
     private Member? Loginfo { get; set; }
 
     protected override async Task OnInitializedAsync()
